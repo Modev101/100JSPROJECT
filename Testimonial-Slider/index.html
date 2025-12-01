@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial-Slider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center flex-col min-h-screen bg-gray-100">
+
+        <!-- CARD 1 -->
+        <div class="relative card1 bg-purple-800/90 p-4 text-white shadow-lg rounded-md pt-16 h-56 w-[600px] ">
+             
+            <img class="absolute top-[-25%] left-1/2 transform -translate-x-1/2 rounded-full w-24" 
+                src="/images/photo-1570295999919-56ceb5ecca61.avif" 
+                alt="person">
+
+            <p class="text-center font-semibold max-w-[500px] mx-auto">
+                This is simply unbelievable! I would be lost without Apple. The very best. Not able to tell you how happy I am with Apple.
+            </p>
+
+            <p class="text-left font-semibold pt-10 pl-10">Cherise G</p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="relative card2 bg-purple-800/90 p-4 text-white shadow-lg rounded-md pt-16 h-56 w-[600px] hidden">
+             
+            <img class="absolute top-[-25%] left-1/2 transform -translate-x-1/2 rounded-full w-24" 
+                src="/images/photo-1628157588553-5eeea00af15c.avif" 
+                alt="person">
+
+            <p class="text-center font-semibold max-w-[500px] mx-auto">
+                Thank you for making it painless, pleasant and most of all hassle free!
+             I wish I would have thought of it first.The very best.
+            </p>
+
+            <p class="text-left font-semibold pt-10 pl-10">Constantine V</p>
+        </div>
+
+
+        <!-- CARD 3 -->
+        <div class="relative card3 bg-purple-800/90 p-4 text-white shadow-lg rounded-md pt-16 h-56 w-[600px] hidden">
+       
+            <img class="absolute top-[-25%] left-1/2 transform -translate-x-1/2 rounded-full w-24" 
+                src="/images/photo-1633332755192-727a05c4013d.avif" 
+                alt="person">
+
+            <p class="text-center font-semibold max-w-[500px] mx-auto">
+                I would also like to say thank you to all your staff.
+             Wow what great service, I love it! Apple impressed me on multiple levels.
+            </p>
+
+            <p class="text-left font-semibold pt-10 pl-10">Rosetta Q</p>
+        </div>
+
+        <script>
+            const cards = document.querySelectorAll(".card1, .card2, .card3");
+            let current = 0;
+
+            function slide() {
+                cards.forEach(card => card.classList.add("hidden"));
+                
+                cards[current].classList.remove("hidden");
+
+                current = (current + 1) % cards.length;
+            }
+
+            slide(); 
+            setInterval(slide, 5000);
+        </script>
+
+    
+</body>
+</html>
