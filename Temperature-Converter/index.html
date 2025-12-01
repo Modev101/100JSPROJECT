@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temperature Converter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-b from-green-400 to-blue-200">
+  <div class="bg-green-300/80 p-10 rounded-xl w-[95%] max-w-lg shadow-2xl">
+    <h1 class="text-3xl font-semibold text-center mb-8 text-teal-800">Temperature Converter</h1>
+
+    <div class="mb-6 flex items-center justify-between">
+      <label for="celsius" class="font-medium text-teal-800 text-lg">Celsius:</label>
+      <input
+        id="celsius"
+        name="celsius"
+        type="number"
+        placeholder="Enter Temperature"
+        class="w-1/2 px-4 py-3 border border-white/50 rounded bg-white/50 placeholder-gray-500 text-lg focus:outline-none focus:ring-2 focus:ring-teal-300"
+      />
+    </div>
+
+    <div class="mb-6 flex items-center justify-between">
+      <label for="fahrenheit" class="font-medium text-teal-800 text-lg">Fahrenheit:</label>
+      <input
+        id="fahrenheit"
+        name="fahrenheit"
+        type="number"
+        placeholder="Enter Temperature"
+        class="w-1/2 px-4 py-3 border border-white/50 rounded bg-white/50 placeholder-gray-500 text-lg focus:outline-none focus:ring-2 focus:ring-teal-300"
+      />
+    </div>
+
+    <div class="mb-6 flex items-center justify-between">
+      <label for="kelvin" class="font-medium text-teal-800 text-lg">Kelvin:</label>
+      <input
+        id="kelvin"
+        name="kelvin"
+        type="number"
+        placeholder="Enter Temperature"
+        class="w-1/2 px-4 py-3 border border-white/50 rounded bg-white/50 placeholder-gray-500 text-lg focus:outline-none focus:ring-2 focus:ring-teal-300"
+      />
+    </div>
+
+    <div class="flex gap-4">
+      <button
+        onclick="convertTemp()"
+        class="flex-1 bg-teal-600 text-white py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+      >
+        CONVERT
+      </button>
+      <button
+        onclick="resetFields()"
+        class="flex-1 bg-red-500 text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition-colors"
+      >
+        RESET
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function convertTemp() {
+      const celsiusInput = document.getElementById("celsius");
+      const fahrenheitInput = document.getElementById("fahrenheit");
+      const kelvinInput = document.getElementById("kelvin");
+
+      const celsiusValue = parseFloat(celsiusInput.value);
+      const fahrenheitValue = parseFloat(fahrenheitInput.value);
+      const kelvinValue = parseFloat(kelvinInput.value);
+
+      if (!celsiusInput.value && !fahrenheitInput.value && !kelvinInput.value) {
+        alert("Please enter a value in one field.");
+        return;
+      }
+
+      if (celsiusInput.value) {
+        fahrenheitInput.value = ((celsiusValue * 9) / 5 + 32).toFixed(2);
+        kelvinInput.value = (celsiusValue + 273.15).toFixed(2);
+      } else if (fahrenheitInput.value) {
+        celsiusInput.value = (((fahrenheitValue - 32) * 5) / 9).toFixed(2);
+        kelvinInput.value = (((fahrenheitValue - 32) * 5) / 9 + 273.15).toFixed(2);
+      } else if (kelvinInput.value) {
+        celsiusInput.value = (kelvinValue - 273.15).toFixed(2);
+        fahrenheitInput.value = (((kelvinValue - 273.15) * 9) / 5 + 32).toFixed(2);
+      }
+    }
+
+    function resetFields() {
+      document.getElementById("celsius").value = "";
+      document.getElementById("fahrenheit").value = "";
+      document.getElementById("kelvin").value = "";
+    }
+  </script>
+</body>
+</html>
