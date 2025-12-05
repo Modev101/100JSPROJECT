@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-pink-300/95 p-6">
+
+  <div class="flex flex-col md:flex-row gap-10 p-8 rounded-xl max-w-4xl">
+
+    <div class="flex-shrink-0">
+      <img src="/image/images.jpg" alt="image" class="rounded-lg shadow-lg max-h-80 object-cover" id="tabImage">
+    </div>
+
+    <div class="flex-1 flex flex-col" id="tabsContainer">
+
+      <div class="flex" id="tabButtons">
+        <button id="btn1" class="tab-btn flex-1 px-4 py-2 bg-white text-center rounded-tl-lg hover:bg-pink-600 hover:text-white">Step 1</button>
+        <button id="btn2" class="tab-btn flex-1 px-4 py-2 bg-white text-center hover:bg-pink-600 hover:text-white">Step 2</button>
+        <button id="btn3" class="tab-btn flex-1 px-4 py-2 bg-white text-center rounded-tr-lg hover:bg-pink-600 hover:text-white">Step 3</button>
+      </div>
+
+      <div id="step1" class="p-4 bg-white shadow flex-1 overflow-auto rounded-b-lg">
+        <h3 class="text-xl font-semibold mb-2">Step 1</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, amet, itaque dolores, magni officiis quia placeat quas assumenda fuga ipsa omnis. Dignissimos perferendis quidem itaque explicabo eveniet, nam nisi corporis.</p>
+      </div>
+
+      <div id="step2" class="hidden p-4 bg-white shadow flex-1 overflow-auto rounded-b-lg">
+        <h3 class="text-xl font-semibold mb-2">Step 2</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem praesentium aperiam qui quasi iure, ullam at ducimus culpa obcaecati ipsum. Magni, corrupti. Ex mollitia totam exercitationem accusantium maxime quidem dolorum!</p>
+      </div>
+
+      <div id="step3" class="hidden p-4 bg-white shadow flex-1 overflow-auto rounded-b-lg">
+        <h3 class="text-xl font-semibold mb-2">Step 3</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum exercitationem alias odit eveniet incidunt tempore, modi quidem quod nesciunt quos maiores harum aut et magnam laudantium vel voluptate necessitatibus nemo?</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+        const tabs = [
+        { btn: document.getElementById('btn1'), content: document.getElementById('step1') },
+        { btn: document.getElementById('btn2'), content: document.getElementById('step2') },
+        { btn: document.getElementById('btn3'), content: document.getElementById('step3') },
+        ];
+
+        function activateTab(index) {
+        tabs.forEach((t, i) => {
+            if (i === index) {
+            t.content.classList.remove('hidden');
+            t.btn.classList.add('bg-white', 'text-black'); 
+            t.btn.classList.remove('bg-blue-400/60'); 
+            } else {
+            t.content.classList.add('hidden');
+            t.btn.classList.remove('bg-white', 'text-black'); 
+            t.btn.classList.add('bg-blue-400/60', 'text-black'); 
+            }
+        });
+        }
+
+        tabs.forEach((t, i) => {
+        t.btn.addEventListener('click', () => activateTab(i));
+        });
+
+        activateTab(0);
+
+        const image = document.getElementById('tabImage');
+        const tabsContainer = document.getElementById('tabsContainer');
+        const tabButtons = document.getElementById('tabButtons');
+
+        function adjustTabContentHeight() {
+        const buttonsHeight = tabButtons.offsetHeight;
+        tabsContainer.querySelectorAll('div[id^="step"]').forEach(content => {
+            content.style.height = (image.clientHeight - buttonsHeight) + 'px';
+        });
+        }
+
+        adjustTabContentHeight();
+        window.addEventListener('resize', adjustTabContentHeight);
+
+  </script>
+
+</body>
+</html>
