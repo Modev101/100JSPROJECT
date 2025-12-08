@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS challenge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen font-[Open Sans]">
+
+  <!-- Rating Card -->
+  <div class="bg-gray-800 text-white p-6 rounded-2xl w-[350px] space-y-5 main">
+
+    <!-- Icon -->
+    <div class="bg-gray-700 w-10 h-10 flex items-center justify-center rounded-full">
+      <img src="/images/icon-star.svg" alt="icon-star">
+    </div>
+
+    <!-- Title -->
+    <h2 class="text-2xl font-bold">How did we do?</h2>
+
+    <!-- Description -->
+    <p class="text-gray-400 text-sm leading-relaxed">
+      Please let us know how we did with your support request. All feedback is appreciated 
+      to help us improve our offering!
+    </p>
+
+    <!-- Rating Buttons -->
+    <div class="flex justify-between text-gray-300">
+      <button class="rate w-12 h-12 flex items-center justify-center rounded-full bg-gray-700 hover:bg-orange-500 hover:text-white cursor-pointer transition" data-value="1">1</button>
+      <button class="rate w-12 h-12 flex items-center justify-center rounded-full bg-gray-700 hover:bg-orange-500 hover:text-white cursor-pointer transition" data-value="2">2</button>
+      <button class="rate w-12 h-12 flex items-center justify-center rounded-full bg-gray-700 hover:bg-orange-500 hover:text-white cursor-pointer transition" data-value="3">3</button>
+      <button class="rate w-12 h-12 flex items-center justify-center rounded-full bg-gray-700 hover:bg-orange-500 hover:text-white cursor-pointer transition" data-value="4">4</button>
+      <button class="rate w-12 h-12 flex items-center justify-center rounded-full bg-gray-700 hover:bg-orange-500 hover:text-white cursor-pointer transition" data-value="5">5</button>
+    </div>
+
+    <!-- Submit -->
+    <button class="w-full bg-orange-500 py-2 rounded-full font-semibold hover:bg-white hover:text-orange-500 transition submit">
+      Submit
+    </button>
+
+  </div>
+
+  <!-- Thank You Card -->
+  <div class="bg-gray-800 text-white p-6 rounded-2xl w-[350px] space-y-5 hidden seconde">
+
+    <div class="flex items-center justify-center">
+      <img src="/images/illustration-thank-you.svg" alt="thank-you">
+    </div>
+
+    <p class="text-orange-500 text-center">You selected <span class="chosen">0</span> out of 5</p>
+
+    <h2 class="text-2xl font-bold text-center">Thank you!</h2>
+
+    <p class="text-gray-400 text-sm leading-relaxed text-center">
+      We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!
+    </p>
+
+  </div>
+
+<script>
+  const rateButtons = document.querySelectorAll(".rate");
+  const submitBtn = document.querySelector(".submit");
+  const mainCard = document.querySelector(".main");
+  const thanksCard = document.querySelector(".seconde");
+  const chosenEl = document.querySelector(".chosen");
+
+  let selected = [];
+
+  rateButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const value = Number(btn.dataset.value); 
+
+      if (selected.includes(value)) {
+        selected = selected.filter(v => v !== value);
+        btn.classList.remove("bg-orange-500", "text-white");
+        btn.classList.add("bg-gray-700", "text-gray-300");
+      } 
+      else {
+        selected.push(value);
+        btn.classList.add("bg-orange-500", "text-white");
+        btn.classList.remove("bg-gray-700", "text-gray-300");
+      }
+    });
+  });
+
+  submitBtn.addEventListener("click", () => {
+    if (selected.length === 0) {
+      alert("Please select at least one rating!");
+      return;
+    }
+
+    chosenEl.textContent = `${selected.length} numbers`;
+
+    mainCard.classList.add("hidden");
+    thanksCard.classList.remove("hidden");
+  });
+</script>
+
+
+</body>
+</html>
