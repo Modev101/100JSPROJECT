@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Project4</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/all.min.css" rel="stylesheet"/>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-cover bg-red-400/85"  style="background-image: url('/images/bg-intro-desktop.png');">
+    <div class="block gap-8 md:block lg:flex max-w-full md:max-w-full lg:max-w-full  ">
+        <div class="pl-16 flex flex-col justify-center">
+            <h1 class="font-bold text-white text-4xl w-[400px]">Learn to code by watching others</h1>
+            <p class="text-white py-5 w-fit lg:w-[500px] md:w-[500px]">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable. </p>
+        </div>
+
+        <div class="flex flex-col items-center justify-center">
+            
+            <div class="bg-purple-700/80 w-fit md:w-fit lg:w-full p-3 rounded-xl shadow-lg text-center mb-3">
+              
+                <p class="text-white"><span class="font-bold text-white">Try it free 7 days</span> then $20/mo. thereafter</p>
+             
+            </div>
+
+            <div class="flex flex-col gap-3 bg-white p-7 rounded-lg mx-5 lg:mx-0 md:mx-0">
+
+                <input autocomplete="off" id="FirstName" type="text" placeholder="First Name" class="border border-black rounded-md p-2">
+                <span id="FNspan" class="text-right text-sm text-red-600"></span>
+                <input autocomplete="off" id="LastName" type="text" placeholder="Last Name"  class="border border-black rounded-md p-2">
+                <span id="LNspan" class="text-right text-sm text-red-600"></span>
+                <input autocomplete="off" id="Email" type="email" placeholder="Email Address"  class="border border-black rounded-md p-2">
+                <span id="Espan" class="text-right text-sm text-red-600"></span>
+                <input autocomplete="off" id="Password" type="password" placeholder="Password"  class="border border-black rounded-md p-2">
+                <span id="PWspan" class="text-right text-sm text-red-600"></span>
+                <button id="btn" class="bg-green-400 rounded-md py-2 uppercase text-white font-semibold hover:opacity-75">claim your free trial</button>
+                <p class="text-sm text-center text-slate-500">By clicking the button.you are agreeing to our <span class="text-red-600 font-semibold cursor-pointer">Terms and Services</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const FirstName = document.getElementById("FirstName");
+        const LastName = document.getElementById("LastName");
+        const Email = document.getElementById("Email");
+        const Password = document.getElementById("Password");
+        const btn = document.getElementById("btn");
+
+        const FNspan = document.getElementById("FNspan");
+        const LNspan = document.getElementById("LNspan");
+        const Espan = document.getElementById("Espan");
+        const PWspan = document.getElementById("PWspan");
+        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
+
+        
+
+        function check(){
+            if(FirstName.value.trim() === ""){
+                 FNspan.innerText = `First Name cannot be empty`;
+                 FirstName.classList.remove("border-black");
+                 FirstName.classList.add("border-red-500");
+
+            }else{
+                FNspan.innerText = "";
+                FirstName.classList.remove("border-black");
+                FirstName.classList.add("border-green-500");
+            }
+            if(LastName.value.trim() === ""){
+                 LNspan.innerText = `Last Name cannot be empty`;
+                 LastName.classList.remove("border-black");
+                 LastName.classList.add("border-red-500");
+            }else{
+                LNspan.innerText = "";
+                LastName.classList.remove("border-black");
+                LastName.classList.add("border-green-500");
+            }
+            if (Email.value.trim() === "") {
+            Espan.innerText = "Email cannot be empty";
+            Email.classList.remove("border-black");
+            Email.classList.add("border-red-500");
+            } else if (!re.test(Email.value)) {
+            Espan.innerText = "Looks like this is not an email";
+            Email.classList.remove("border-black");
+            Email.classList.add("border-red-500");
+            } else {
+            Espan.innerText = "";
+            Email.classList.remove("border-black");
+            Email.classList.add("border-green-500");
+            }
+
+            if(Password.value.trim() === ""){
+                 PWspan.innerText = `Password cannot be empty`;
+                 Password.classList.remove("border-black");
+                 Password.classList.add("border-red-500");
+            }else{
+                PWspan.innerText = "";
+                Password.classList.remove("border-black");
+                Password.classList.add("border-green-500");
+            }
+        }
+        
+        btn.addEventListener("click", check);
+        
+    </script>
+</body>
+</html>
