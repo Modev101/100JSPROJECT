@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Project5</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-slate-700">
+
+    <div class="flex items-center justify-center gap-x-10 bg-white rounded-lg p-5 shadow-xl " id="main">
+
+        <div class="flex-col flex">
+            
+            <h1 class="text-4xl text-slate-900 font-bold">Stay updated!</h1>
+            
+            <h5 class="w-[350px] py-4">Join 60,000+ product manager receiving monthly updates on:</h5>
+            
+            <div class="flex justify-between items-center pb-5">
+            
+                <div>
+            
+                <img src="/images/icon-list.svg" alt="icon-list" class="pb-2">
+                <img src="/images/icon-list.svg" alt="icon-list">
+                <img src="/images/icon-list.svg" alt="icon-list" class="pt-2">
+                
+                </div>
+
+                <div>
+
+                    <p class="pb-2">Product discovery ans building what matters</p>
+                    <p>Measuring to ensure updates are a success</p>
+                    <p class="pt-2">And much more!</p>
+               
+                </div>
+
+
+            </div>
+
+            <div class="flex justify-between">
+            <p class="pb-2">Email address</p>
+            <span id="Espan" class="text-red-500 font-semibold"></span>
+            </div>
+
+            <input id="Email" type="email" spellcheck="false" autocorrect="off" autocomplete="off" class="p-2 rounded-md border border-slate-600 hover:cursor-pointer" placeholder="email@company.com">
+
+            <button id="btn" class="mt-3 bg-slate-900 text-white rounded-md py-2 font-medium hover:bg-[#ff6257]">Subscribe to monthly newsletter</button>
+           
+        </div>
+
+        <div class="h-[450px] ">
+
+            <img src="/images/illustration-sign-up-desktop.svg" alt="illustration-sign-up-desktop" class="h-full">
+            
+        </div>
+
+    </div>
+
+    <div class="bg-white rounded-lg shadow-xl p-10 hidden" id="thanks">
+
+        <div>
+
+            <img src="/images/icon-success.svg" alt="icon-success" class="size-7">
+
+            <p class="text-slate-900 font-bold text-2xl w-52 my-5">Thanks for subscribing!</p>
+
+            <p id="Pthanks" class="mb-7 font-semibold w-[250px] text-sm"></p>
+
+            <button id="Dismiss" class="bg-slate-900 text-white w-full rounded-md py-2 hover:bg-[#ff6257]">Dismiss message</button>
+          
+        </div>
+
+    </div>
+
+        <script>
+    const Email = document.getElementById("Email");
+    const btn = document.getElementById("btn");
+    const thanks = document.getElementById("thanks");
+    const Pthanks = document.getElementById("Pthanks");
+    const main = document.getElementById("main");
+    const Espan = document.getElementById("Espan");
+    const Dismiss = document.getElementById("Dismiss");
+
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    function check() {
+
+        Email.classList.remove(
+        "border-red-500",
+        "text-red-500",
+        "bg-red-100",
+        "border-green-500"
+        );
+
+        if (Email.value.trim() === "") {
+        Espan.innerText = "Email cannot be empty";
+        Email.classList.add("border-red-500", "text-red-500", "bg-red-100");
+        return false;
+        }
+
+        if (!re.test(Email.value)) {
+        Espan.innerText = "Looks like this is not an email";
+        Email.classList.add("border-red-500", "text-red-500", "bg-red-100");
+        return false;
+        }
+
+        Espan.innerText = "";
+        Email.classList.add("border-green-500");
+        return true;
+    }
+
+    function result() {
+        Pthanks.innerHTML = `
+        A confirmation email has been sent to 
+        <span class="font-bold">${Email.value}</span>.
+        Please open it and click the button inside to confirm your subscription.`;
+        main.classList.add("hidden");
+        thanks.classList.remove("hidden");
+    }
+
+    btn.addEventListener("click", () => {
+        if (check()) {
+        result();
+        }
+    });
+
+    Dismiss.addEventListener("click", () => {
+        thanks.classList.add("hidden");
+    });
+    
+    </script>
+
+</body>
+
+</html>
