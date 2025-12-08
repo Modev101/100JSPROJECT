@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Project3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/all.min.css" rel="stylesheet"/>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div>
+
+        <div class="flex-col items-center justify-center flex">
+
+            <img src="/images/logo.svg" alt="logo image" >
+            
+            <p class="text-3xl text-slate-500 pt-5">We are lanching <span class="font-bold text-black">soon!</span></p>
+            
+            <h3 class="text-slate-700 pt-2 pb-5">Subscribe and get notified</h3>
+            
+        </div>
+       
+        <input 
+        type="text"
+        id="input"
+        placeholder="Your email address..." 
+        class="border border-gray-300 p-2 rounded-full"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false">
+        
+        <button class="bg-blue-500 rounded-full px-5 py-2 shadow-lg text-white hover:opacity-85" id="btn">Notify Me</button>
+       
+        <p id="error" class="text-red-600"></p>
+       
+        <div class="py-10">
+
+            
+            <img src="/images/illustration-dashboard.png" alt="illustration-dashboard" class="h-56">
+        </div>
+
+        <div class="flex items-center justify-center flex-col">
+
+            <div class="pb-3">
+
+            <i class="fa-brands fa-facebook text-blue-500 " ></i>
+            <i class="fa-brands fa-square-twitter text-blue-500 "></i>
+            <i class="fa-brands fa-square-instagram text-blue-500 "></i>
+
+            </div>
+
+            <p class="text-slate-500">&copy; Copyright Ping.All rights reserved.</p>
+
+        </div>
+        
+    </div>
+
+    <script>
+        const btn = document.getElementById("btn");
+        const input = document.getElementById("input");
+        const error = document.getElementById("error");
+        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
+
+        function check() {
+            if (re.test(input.value)) {
+                error.innerText = "";
+                input.classList.remove("border-red-500");
+                input.classList.add("border-green-500");
+            } else {
+                error.innerText = "Please provide a valid email address";
+                input.classList.add("border-red-500");
+            }
+        }
+
+        btn.addEventListener("click", check);
+
+    </script>
+
+    
+</body>
+</html>
