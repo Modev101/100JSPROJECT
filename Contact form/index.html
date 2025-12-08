@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Project6</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200..800&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body
+  class="bg-[#87a3a6ff] px-4 py-5
+         lg:h-screen lg:flex lg:items-center lg:justify-center lg:overflow-hidden">
+
+  <!-- WRAPPER -->
+  <div class="relative w-full max-w-3xl mx-auto">
+
+    <!-- GREEN CARD -->
+    <div
+    id="thanks"
+      class="bg-[#2b4246ff] rounded-lg p-4 shadow-xl hidden
+             lg:absolute lg:top-[-48px] lg:left-1/2 lg:-translate-x-1/2 lg:z-10">
+      <div class="flex text-white capitalize font-semibold">
+        <img src="/images/icon-success-check.svg" alt="icon-success-check" class="pr-2">
+        <p>message sent!</p>
+      </div>
+      <div class="pt-2">
+        <p class="text-white/75">Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+    </div>
+
+    <!-- WHITE CARD -->
+    <div class="flex flex-col bg-white rounded-lg shadow-2xl w-full px-6 py-4 lg:mt-16">
+
+      <!-- TITLE -->
+      <p class="capitalize font-semibold text-2xl lg:text-xl pb-3 lg:pb-1">
+        contact us
+      </p>
+
+      <!-- NAMES -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-3">
+        <div class="flex flex-col">
+          <p class="capitalize pb-1 text-sm">
+            first name <span class="text-[#0c7d69ff]">*</span>
+          </p>
+          <input type="text" autocomplete="off" autocorrect="off" spellcheck="off"
+                 id="fn"
+                 class="border border-black rounded-lg py-1 px-2 hover:cursor-pointer hover:border-[#0c7d69ff]">
+          <span id="fnspan" class="text-red-500 text-xs"></span>
+        </div>
+
+        <div class="flex flex-col">
+          <p class="capitalize pb-1 text-sm">
+            last name <span class="text-[#0c7d69ff]">*</span>
+          </p>
+          <input type="text" autocomplete="off" autocorrect="off" spellcheck="off"
+                 id="ln"
+                 class="border border-black rounded-lg py-1 px-2 hover:cursor-pointer hover:border-[#0c7d69ff]">
+          <span id="lnspan" class="text-red-500 text-xs"></span>
+        </div>
+      </div>
+
+      <!-- EMAIL -->
+      <div class="flex flex-col">
+        <p class="capitalize py-2 lg:py-1 text-sm">
+          email address <span class="text-[#0c7d69ff]">*</span>
+        </p>
+        <input type="email" autocomplete="off" autocorrect="off" spellcheck="off"
+               id="em"
+               class="pl-2 border border-black rounded-lg py-1 hover:cursor-pointer hover:border-[#0c7d69ff]">
+        <span id="emspan" class="text-red-500 text-xs"></span>
+      </div>
+
+      <!-- QUERY TYPE -->
+      <div>
+        <p class="capitalize py-2 lg:py-1 text-sm">
+          query type <span class="text-[#0c7d69ff]">*</span>
+        </p>
+
+        <div class="lg:flex lg:justify-between gap-3">
+          <div id="rd1div">
+            <label class="flex items-center gap-2 border border-black rounded-lg py-1 px-3 lg:px-28 cursor-pointer">
+              <input id="rd1" type="radio" name="query" class="size-3 hover:cursor-pointer">
+              <span class="capitalize text-sm ">general enquiry</span>
+            </label>
+          </div>
+
+          <div class="pt-3 lg:pt-0" id="rd2div">
+            <label class="flex items-center gap-2 border border-black rounded-lg py-1 px-3 lg:px-28 cursor-pointer">
+              <input id="rd2" type="radio" name="query" class="size-3 hover:cursor-pointer">
+              <span class="capitalize text-sm">support request</span>
+            </label>
+          </div>
+        </div>
+
+        <span id="rdspan" class="text-red-500 text-xs"></span>
+      </div>
+
+      <!-- MESSAGE -->
+      <div class="flex flex-col">
+        <p class="capitalize py-2 lg:py-1 text-sm">
+          message <span class="text-[#0c7d69ff]">*</span>
+        </p>
+        <textarea
+          id="msg"
+          class="pl-2 border border-black rounded-lg
+                 min-h-[120px] lg:min-h-[80px]
+                 hover:border-[#0c7d69ff] hover:cursor-pointer"></textarea>
+        <span id="msgspan" class="text-red-500 text-xs"></span>
+      </div>
+
+      <!-- CONSENT -->
+      <div class="pt-3 lg:pt-2 flex items-start gap-2">
+        <input id="checkbox" type="checkbox" class="size-3 mt-1 cursor-pointer">
+        <label class="text-sm cursor-pointer" for="checkbox" id="checklb">
+          I consent to being contacted by the team
+          <span class="text-[#0c7d69ff]">*</span>
+        </label>
+      </div>
+      <span id="checkspan" class="text-red-500 text-xs"></span>
+
+      <!-- BUTTON -->
+      <div class="pt-6 lg:pt-3">
+        <button
+          id="btn"
+          class="bg-[#0c7d69ff] text-white w-full rounded-lg
+                 py-4 lg:py-2 capitalize hover:bg-[#2b4246ff]">
+          submit
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    const fn = document.getElementById("fn");
+    const ln = document.getElementById("ln");
+    const em = document.getElementById("em");
+    const rd1 = document.getElementById("rd1");
+    const rd2 = document.getElementById("rd2");
+    const msg = document.getElementById("msg");
+    const checkbox = document.getElementById("checkbox");
+    const btn = document.getElementById("btn");
+    const thanks = document.getElementById("thanks");
+
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    const checklb = document.getElementById("checklb");
+    const rd1div = document.getElementById("rd1div");
+    const rd2div = document.getElementById("rd2div");
+    const fnspan = document.getElementById("fnspan");
+    const lnspan = document.getElementById("lnspan");
+    const emspan = document.getElementById("emspan");
+    const rdspan = document.getElementById("rdspan");
+    const msgspan = document.getElementById("msgspan");
+    const checkspan = document.getElementById("checkspan");
+
+    function validateForm() {
+    let valid = true;
+
+    // First name
+    if (fn.value.trim() === "") {
+      fn.classList.add("border-red-500");
+      fnspan.innerText = "This field is required";
+      valid = false;
+    } else {
+      fn.classList.replace("border-red-500", "border-green-500");
+      fnspan.innerText = "";
+    }
+
+    // Last name
+    if (ln.value.trim() === "") {
+      ln.classList.add("border-red-500");
+      lnspan.innerText = "This field is required";
+      valid = false;
+    } else {
+      ln.classList.replace("border-red-500", "border-green-500");
+      lnspan.innerText = "";
+    }
+
+    // Email
+    if (em.value.trim() === "") {
+      em.classList.add("border-red-500");
+      emspan.innerText = "This field is required";
+      valid = false;
+    } else if (!re.test(em.value)) {
+      em.classList.add("border-red-500");
+      emspan.innerText = "Looks like this is not an email";
+      valid = false;
+    } else {
+      em.classList.replace("border-red-500", "border-green-500");
+      emspan.innerText = "";
+    }
+
+    // Radio buttons
+    if (!rd1.checked && !rd2.checked) {
+      rdspan.innerText = "This field is required";
+      valid = false;
+    } else {
+      rdspan.innerText = "";
+    }
+
+    // Message
+    if (msg.value.trim() === "") {
+      msg.classList.add("border-red-500");
+      msgspan.innerText = "This field is required";
+      valid = false;
+    } else {
+      msg.classList.replace("border-red-500", "border-green-500");
+      msgspan.innerText = "";
+    }
+
+    // Checkbox
+    if (!checkbox.checked) {
+      checkspan.innerText = "To submit this form, please consent to being contacted";
+      valid = false;
+    } else {
+      checkspan.innerText = "";
+    }
+
+      return valid;
+    }
+
+    function thankYou() {
+      thanks.classList.remove("hidden");
+    }
+
+    // Button click
+    btn.addEventListener("click", (e) => {
+      e.preventDefault(); // prevent form submission
+      if (validateForm()) {
+        thankYou();
+      }
+      });
+
+  </script>
+
+</body>
+</html>
