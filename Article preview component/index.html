@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Share Card</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="master.css">
+<style>
+.arrow_box {
+    position: absolute;
+    bottom: 120%; /* above the icon */
+    right: 50%;
+    transform: translateX(50%);
+    background-color: #1e293b; /* slate-800 */
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Triangle arrow pointing down */
+.arrow_box::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #1e293b transparent transparent transparent;
+}
+</style>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-100 p-4 font-sans">
+
+<div class="flex flex-col md:flex-row w-full md:w-1/2 bg-white rounded-lg shadow-md main">
+
+    <!-- Image -->
+    <div class="w-full md:w-1/2">
+        <img class="h-full w-full object-cover" src="/images/drawers.jpg" alt="drawers">
+    </div>
+
+    <!-- Content -->
+    <div class="flex flex-col p-6 w-full md:w-1/2 justify-between">
+
+        <!-- Text -->
+        <div>
+            <p class="text-xl font-bold pb-3">Shift the overall look and feel by adding these wonderful touches to furniture in your home</p>
+            <p class="text-sm pb-3 text-slate-600">Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.</p>
+        </div>
+
+        <!-- Author & Share -->
+        <div class="flex justify-between items-center pt-4">
+            <div class="flex items-center gap-3">
+                <img class="rounded-full w-10 h-10" src="/images/avatar-michelle.jpg" alt="avatar-michelle">
+                <div class="flex flex-col text-sm">
+                    <span class="font-medium">Michelle Appleton</span>
+                    <span class="text-slate-600">28 JUN 2020</span>
+                </div>
+            </div>
+
+            <!-- Share Icon -->
+            <div class="relative">
+                <i class="fa-solid fa-share flex items-center justify-center bg-slate-400 rounded-full w-8 h-8 text-sm transition-colors duration-200 hover:bg-slate-500 cursor-pointer share"></i>
+
+                <!-- Share Box -->
+                <div class="arrow_box hidden">
+                    <span class="text-xs tracking-widest font-semibold">SHARE</span>
+                    <i class="fa-brands fa-square-facebook text-blue-500 hover:text-blue-700 cursor-pointer"></i>
+                    <i class="fa-brands fa-twitter text-sky-400 hover:text-sky-600 cursor-pointer"></i>
+                    <i class="fa-brands fa-pinterest text-red-600 hover:text-red-800 cursor-pointer"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+const share = document.querySelector(".share");
+const arrow = document.querySelector(".arrow_box");
+const main = document.querySelector(".main");
+
+share.addEventListener("click", () => {
+    arrow.classList.toggle("hidden");
+ });
+
+
+</script>
+
+</body>
+</html>

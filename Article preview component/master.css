@@ -1,0 +1,9 @@
+@media (max-width:767px) {
+    .arrow_box{
+        left: -250px !important;
+    }
+    .main{
+        overflow: hidden;
+    }
+    
+}
