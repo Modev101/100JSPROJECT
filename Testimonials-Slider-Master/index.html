@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials-Slider-Master</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/all.min.css" rel="stylesheet"/>
+</head>
+
+<body class="flex items-center justify-center h-screen">
+
+    <!-- card1 -->
+    <div class="flex items-center justify-center flex-col lg:flex-row-reverse" id="card1">
+
+        <div class="relative flex items-center justify-center w-full overflow-visible mb-20 z-0">
+            <img src="/images/pattern-bg.svg"
+                 class="absolute w-[400px] max-w-none z-0 lg:w-[450px]">
+
+            <img src="/images/image-tanya.jpg"
+                 class="relative w-[300px] z-10 rounded-lg shadow-2xl lg:w-[350px]">
+
+            <div class="bg-white absolute w-[70px] h-[40px] shadow-2xl flex items-center justify-evenly rounded-full top-[280px] z-20 lg:top-[325px] lg:left-10">
+                <i class="fa-solid fa-angle-left nav-left text-[#202046ff] cursor-pointer hover:text-purple-800"></i>
+                <i class="fa-solid fa-angle-right nav-right text-[#202046ff] cursor-pointer hover:text-purple-800"></i>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-center flex-col relative z-10">
+            <img src="/images/pattern-quotes.svg"
+                 class="z-0 absolute size-16 top-[-20px]">
+
+            <p class="text-lg font-medium w-[290px] mb-4 lg:w-[435px]">
+                “ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”
+            </p>
+
+            <p class="font-bold flex flex-col lg:block">
+                Tanya Sinclair <span class="text-[#babacfff]">UX Engineer</span>
+            </p>
+
+            <img src="/images/pattern-curve.svg"
+                 class="top-[310px] right-[100px] absolute lg:right-[280px]">
+        </div>
+    </div>
+
+    <!-- card2 -->
+    <div class="flex items-center justify-center flex-col lg:flex-row-reverse hidden" id="card2">
+
+        <div class="relative flex items-center justify-center w-full overflow-visible mb-20 z-0">
+            <img src="/images/pattern-bg.svg"
+                 class="absolute w-[400px] max-w-none z-0 lg:w-[450px]">
+
+            <img src="/images/image-john.jpg"
+                 class="relative w-[300px] z-10 rounded-lg shadow-2xl lg:w-[350px]">
+
+            <div class="bg-white absolute w-[70px] h-[40px] shadow-2xl flex items-center justify-evenly rounded-full top-[280px] z-20 lg:top-[325px] lg:left-10">
+                <i class="fa-solid fa-angle-left nav-left text-[#202046ff] cursor-pointer hover:text-purple-800"></i>
+                <i class="fa-solid fa-angle-right nav-right text-[#202046ff] cursor-pointer hover:text-purple-800"></i>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-center flex-col relative z-10">
+            <img src="/images/pattern-quotes.svg"
+                 class="z-0 absolute size-16 top-[-20px]">
+
+            <p class="text-lg font-medium w-[290px] mb-4 lg:w-[435px]">
+                “ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”
+            </p>
+
+            <p class="font-bold flex flex-col lg:block">
+                John Tarkpor <span class="text-[#babacfff]">Junior Front-end Developer</span>
+            </p>
+
+            <img src="/images/pattern-curve.svg"
+                 class="top-[310px] right-[100px] absolute lg:right-[280px]">
+        </div>
+    </div>
+
+    <script>
+        const card1 = document.getElementById("card1");
+        const card2 = document.getElementById("card2");
+
+        document.querySelectorAll(".nav-right").forEach(btn => {
+            btn.addEventListener("click", () => {
+                card1.classList.toggle("hidden");
+                card2.classList.toggle("hidden");
+            });
+        });
+
+        document.querySelectorAll(".nav-left").forEach(btn => {
+            btn.addEventListener("click", () => {
+                card2.classList.toggle("hidden");
+                card1.classList.toggle("hidden");
+            });
+        });
+        
+    </script>
+
+</body>
+</html>
