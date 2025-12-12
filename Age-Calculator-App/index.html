@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age-Calculator-App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="/all.min.css" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-[#dbdbdb] font-[Poppins]">
+
+  <div class="bg-white rounded-2xl px-6 py-8 w-[340px] sm:w-[420px] shadow-lg rounded-br-[100px]">
+    <div class="flex gap-4">
+      <!-- Day -->
+      <div class="flex flex-col w-[80px] shrink-0">
+        <label class="uppercase text-xs tracking-widest font-semibold text-gray-500 mb-1" id="daylb">Day</label>
+        <input id="day" type="number" placeholder="DD" min="1" max="31" step="1" autocomplete="off"
+               class="cursor-pointer w-full border border-gray-400 rounded-lg px-3 py-2 text-xl font-bold focus:outline-none focus:border-[#854dff]"/>
+        <span class="text-xs pt-1 text-red-500" id="dayspan"></span>
+      </div>
+
+      <!-- Month -->
+      <div class="flex flex-col w-[80px] shrink-0">
+        <label class="uppercase text-xs tracking-widest font-semibold text-gray-500 mb-1" id="monthlb">Month</label>
+        <input id="month" type="number" placeholder="MM" min="1" max="12" step="1" autocomplete="off"
+               class="cursor-pointer w-full border border-gray-400 rounded-lg px-3 py-2 text-xl font-bold focus:outline-none focus:border-[#854dff]"/>
+        <span class="text-xs pt-1 text-red-500" id="monthspan"></span>
+      </div>
+
+      <!-- Year -->
+      <div class="flex flex-col w-[110px] shrink-0">
+        <label class="uppercase text-xs tracking-widest font-semibold text-gray-500 mb-1" id="yearlb">Year</label>
+        <input id="year" type="number" placeholder="YYYY" min="1900" step="1" autocomplete="off"
+               class="cursor-pointer w-full border border-gray-400 rounded-lg px-3 py-2 text-xl font-bold focus:outline-none focus:border-[#854dff]"/>
+        <span class="text-xs pt-1 text-red-500" id="yearspan"></span>
+      </div>
+    </div>
+
+    <!-- Divider + Button -->
+    <div class="relative my-8">
+      <div class="border-t border-gray-300"></div>
+      <button id="btn"
+              class="absolute left-1/2 -translate-x-1/2 -top-6 lg:left-auto lg:right-0 lg:translate-x-0 bg-[#854dff] hover:bg-black transition duration-200 rounded-full w-12 h-12 flex items-center justify-center">
+        <i class="fa-solid fa-arrow-down text-white text-lg"></i>
+      </button>
+    </div>
+
+    <!-- Results -->
+    <div class="space-y-2 text-4xl font-extrabold italic">
+      <p><span class="text-[#854dff]" id="yearresult">--</span> years</p>
+      <p><span class="text-[#854dff]" id="monthresult">--</span> months</p>
+      <p><span class="text-[#854dff]" id="dayresult">--</span> days</p>
+    </div>
+  </div>
+
+  <script>
+    const year = document.getElementById("year");
+    const month = document.getElementById("month");
+    const day = document.getElementById("day");
+
+    const yearlb = document.getElementById("yearlb");
+    const monthlb = document.getElementById("monthlb");
+    const daylb = document.getElementById("daylb");
+
+    const yearspan = document.getElementById("yearspan");
+    const monthspan = document.getElementById("monthspan");
+    const dayspan = document.getElementById("dayspan");
+
+    const yearresult = document.getElementById("yearresult");
+    const monthresult = document.getElementById("monthresult");
+    const dayresult = document.getElementById("dayresult");
+
+    const btn = document.getElementById("btn");
+
+    const nowdate = new Date();
+    year.setAttribute("max", nowdate.getFullYear());
+
+    // Limit digits for inputs
+    day.addEventListener("input", () => { if(day.value.length > 2) day.value = day.value.slice(0,2); });
+    month.addEventListener("input", () => { if(month.value.length > 2) month.value = month.value.slice(0,2); });
+    year.addEventListener("input", () => { if(year.value.length > 4) year.value = year.value.slice(0,4); });
+
+    function calc() {
+      let hasError = false;
+
+      [year, month, day].forEach(el => el.classList.replace("border-red-400", "border-gray-400"));
+      [yearlb, monthlb, daylb].forEach(el => el.classList.replace("text-red-500", "text-gray-500"));
+      [yearspan, monthspan, dayspan].forEach(el => el.innerText = "");
+
+      // Validation
+      if(!year.value) {
+        year.classList.replace("border-gray-400","border-red-400");
+        yearlb.classList.replace("text-gray-500","text-red-500");
+        yearspan.innerText="Required";
+        hasError=true;
+      } else if(year.value > nowdate.getFullYear()){
+        year.classList.replace("border-gray-400","border-red-400");
+        yearlb.classList.replace("text-gray-500","text-red-500");
+        yearspan.innerText="Must be past";
+        hasError=true;
+      } else if(year.value < 1900){
+        year.classList.replace("border-gray-400","border-red-400");
+        yearlb.classList.replace("text-gray-500","text-red-500");
+        yearspan.innerText="Cannot be before 1900";
+        hasError=true;
+      }
+
+      if(!month.value){
+        month.classList.replace("border-gray-400","border-red-400");
+        monthlb.classList.replace("text-gray-500","text-red-500");
+        monthspan.innerText="Required";
+        hasError=true;
+      } else if(month.value < 1 || month.value > 12){
+        month.classList.replace("border-gray-400","border-red-400");
+        monthlb.classList.replace("text-gray-500","text-red-500");
+        monthspan.innerText="Invalid";
+        hasError=true;
+      }
+
+      if(!day.value){
+        day.classList.replace("border-gray-400","border-red-400");
+        daylb.classList.replace("text-gray-500","text-red-500");
+        dayspan.innerText="Required";
+        hasError=true;
+      } else {
+        const maxDays = new Date(year.value, month.value, 0).getDate();
+        if(day.value < 1 || day.value > maxDays){
+          day.classList.replace("border-gray-400","border-red-400");
+          daylb.classList.replace("text-gray-500","text-red-500");
+          dayspan.innerText="Invalid";
+          hasError=true;
+        }
+      }
+
+      if(hasError) return;
+
+      // Age calculation
+      const birthDate = new Date(year.value, month.value-1, day.value);
+      let ageYears = nowdate.getFullYear() - birthDate.getFullYear();
+      let ageMonths = nowdate.getMonth() - birthDate.getMonth();
+      let ageDays = nowdate.getDate() - birthDate.getDate();
+
+      if(ageDays < 0){
+        const prevMonthDays = new Date(nowdate.getFullYear(), nowdate.getMonth(), 0).getDate();
+        ageDays += prevMonthDays;
+        ageMonths -= 1;
+      }
+      if(ageMonths < 0){
+        ageMonths += 12;
+        ageYears -= 1;
+      }
+
+      yearresult.innerText = ageYears;
+      monthresult.innerText = ageMonths;
+      dayresult.innerText = ageDays;
+    }
+
+    btn.addEventListener("click", calc);
+  </script>
+</body>
+</html>
