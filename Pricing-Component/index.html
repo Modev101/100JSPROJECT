@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Pricing Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+    rel="stylesheet"
+  >
+  <link href="/all.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-[hsl(230,100%,99%)] font-[Manrope]">
+
+  <main class="flex flex-col items-center gap-16 w-full">
+
+    <header class="relative text-center px-6">
+      <img src="/images/pattern-circles.svg" class="absolute inset-0 mx-auto -z-10 -top-9">
+      <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900">
+        Simple, traffic-based pricing
+      </h1>
+      <p class="text-gray-500 mt-3 max-w-md mx-auto">
+        Sign-up for our 30-day trial. No credit card required.
+      </p>
+    </header>
+
+    <section class="bg-white w-[90%] max-w-[540px] rounded-xl shadow-2xl p-8 md:p-10">
+
+      <div class="flex flex-col items-center gap-6 md:flex-row md:justify-between text-gray-500 font-bold tracking-widest mb-10">
+        <p id="pageviews">100K PAGEVIEWS</p>
+
+        <p class="text-4xl font-extrabold text-gray-900">
+          <span id="price">$16.00</span>
+          <span class="text-base font-medium text-gray-500">/ month</span>
+        </p>
+      </div>
+
+      <input
+        id="slider"
+        type="range"
+        min="0"
+        max="4"
+        value="2"
+        class="w-full mb-10 md:mb-12"
+      >
+
+      <div class="flex flex-wrap items-center justify-center gap-3 text-sm text-gray-500 text-center">
+        <span>Monthly Billing</span>
+        <input type="checkbox" id="switchbtn">
+        <span>Yearly Billing</span>
+
+        <span class="hidden md:inline bg-red-100 text-red-500 px-2 py-0.5 rounded-full text-xs font-bold">
+          25% discount
+        </span>
+
+        <span class="md:hidden bg-red-100 text-red-500 px-2 py-0.5 rounded-full text-xs font-bold">
+          -25%
+        </span>
+      </div>
+
+      <hr class="my-8">
+
+      <div class="flex flex-col items-center gap-8 md:flex-row md:justify-between">
+        <div class="space-y-3 text-gray-500 text-sm text-center md:text-left">
+          <p><i class="fa-solid fa-check text-green-400 mr-2"></i>Unlimited websites</p>
+          <p><i class="fa-solid fa-check text-green-400 mr-2"></i>100% data ownership</p>
+          <p><i class="fa-solid fa-check text-green-400 mr-2"></i>Email reports</p>
+        </div>
+
+        <button class="bg-gray-900 text-white px-8 py-3 rounded-full hover:bg-gray-700 transition">
+          Start my trial
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const slider = document.getElementById("slider");
+    const priceEl = document.getElementById("price");
+    const pageviewsEl = document.getElementById("pageviews");
+    const toggle = document.getElementById("switchbtn");
+
+    const plans = [
+      { views: "10K", price: 8 },
+      { views: "50K", price: 12 },
+      { views: "100K", price: 16 },
+      { views: "500K", price: 24 },
+      { views: "1M", price: 36 },
+    ];
+
+    function updateUI() {
+      const plan = plans[slider.value];
+      let price = plan.price;
+
+      if (toggle.checked) {
+        price = price * 0.75; 
+      }
+
+      pageviewsEl.textContent = `${plan.views} PAGEVIEWS`;
+      priceEl.textContent = `$${price.toFixed(2)}`;
+
+      const percent = (slider.value / slider.max) * 100;
+      slider.style.background = `
+        linear-gradient(
+          to right,
+          hsl(174, 77%, 80%) ${percent}%,
+          hsl(224, 65%, 95%) ${percent}%
+        )
+      `;
+    }
+
+    slider.addEventListener("input", updateUI);
+    toggle.addEventListener("change", updateUI);
+
+    updateUI();
+  </script>
+
+</body>
+</html>
