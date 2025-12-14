@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-[#EEE] h-screen">
+
+    <nav
+        id="menu"
+        role="navigation"
+        class="fixed top-0 left-0 z-50 h-full bg-white shadow-2xl p-4
+               w-72 md:w-80 lg:w-1/3
+               transform -translate-x-full
+               transition-transform duration-700 ease-in-out"
+    >
+        <div class="flex justify-between items-center mb-6">
+            <p class="font-mono text-[#F8A5A5]">Sahand Ghavidel</p>
+            <button
+                id="closebtn"
+                aria-label="Close menu"
+                class="text-[#F8A5A5] hover:text-black text-4xl"
+            >
+                &times;
+            </button>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <p class="text-gray-500 cursor-pointer transition-all duration-700 hover:bg-[#F8A5A5] hover:pl-5 py-2"> Home </p>
+            <p class="text-gray-500 cursor-pointer transition-all duration-700 hover:bg-[#F8A5A5] hover:pl-5 py-2"> About </p>
+            <p class="text-gray-500 cursor-pointer transition-all duration-700 hover:bg-[#F8A5A5] hover:pl-5 py-2"> Contact </p>
+        </div>
+    </nav>
+
+    <button
+        id="barsbtn"
+        aria-label="Open menu"
+        class="fixed top-4 right-4 z-50"
+    >
+        <i class="fa-solid fa-bars text-[#F8A5A5] hover:text-black text-2xl shadow-2xl"></i>
+    </button>
+
+    <script>
+        const menu = document.getElementById("menu");
+        const toggleMenu = () => {
+            menu.classList.toggle("-translate-x-full");
+        };
+
+        document.getElementById("closebtn").addEventListener("click", toggleMenu);
+        document.getElementById("barsbtn").addEventListener("click", toggleMenu);
+    </script>
+
+</body>
+</html>
