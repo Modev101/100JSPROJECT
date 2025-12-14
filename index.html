@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video-Trailer-Popup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/all.min.css" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center h-screen bg-black">
+    <div class="flex justify-center flex-col " id="main">
+        <img src="https://images.pexels.com/photos/3062545/pexels-photo-3062545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="crew-image" class="rounded-lg shadow-lg  w-[450px]">
+        <h1 class="text-white text-3xl py-7 font-semibold">Movie Title</h1>
+        <p class="text-white leading-none w-[450px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iste necessitatibus porro explicabo illo dolorum dolores cupiditate non modi quasi nobis, earum ab, autem esse vero sapiente minus vel! Provident?</p>
+        <button class="rounded-lg bg-white w-fit px-4 py-1 mt-5 hover:bg-yellow-500" id="btn">Watch now</button>
+    </div>
+
+    <div id="seconde" class="flex items-end flex-col hidden">
+        <button class="text-white text-6xl mb-20" id="close">&times;</button>
+        <video src="/videos/CLS 63 AMG.mp4" controls="true" class="w-[600px] h-[350px]"></video>
+    </div>
+
+
+    <script>
+        const main = document.getElementById("main");
+        const seconde = document.getElementById("seconde");
+        const btn = document.getElementById("btn");
+        const close = document.getElementById("close");
+        const video = seconde.querySelector("video");
+
+        btn.addEventListener("click", () => {
+            main.classList.add("hidden");
+            seconde.classList.remove("hidden");
+            video.play(); 
+        });
+
+        close.addEventListener("click", () => {
+            video.pause();          
+            video.currentTime = 0;  
+            seconde.classList.add("hidden");
+            main.classList.remove("hidden");
+        });
+    </script>
+
+
+</body>
+</html>
