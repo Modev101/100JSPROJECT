@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q & A</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="all.min.css" />
+</head>
+
+<body class="flex items-center justify-center h-screen bg-[#EEE]">
+
+    <!-- WRAPPER -->
+    <div class="flex flex-col gap-y-5 w-full max-w-2xl">
+
+        <!-- Card 1 -->
+        <div class="bg-white shadow-xl rounded-lg p-5 w-full accordion-item">
+            <div class="flex justify-between pb-5">
+                <p class="capitalize text-[#a7cd32] font-semibold">
+                    do you accept all major credit cards?
+                </p>
+                <button class="btn">
+                    <i class="fa-regular fa-square-plus text-[#a7cd32] text-[20px] hover:text-black"></i>
+                </button>
+            </div>
+
+            <div class="pt-5 border-t border-black accordion-content hidden">
+                <p class="text-sm text-gray-600">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est dolore illo dolores quia nemo doloribus quaerat, magni numquam repellat reprehenderit.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white shadow-xl rounded-lg p-5 w-full accordion-item">
+            <div class="flex justify-between pb-5">
+                <p class="capitalize text-[#a7cd32] font-semibold">
+                    do you support local farmers?
+                </p>
+                <button class="btn">
+                    <i class="fa-regular fa-square-plus text-[#a7cd32] text-[20px] hover:text-black"></i>
+                </button>
+            </div>
+
+            <div class="pt-5 border-t border-black accordion-content hidden">
+                <p class="text-sm text-gray-600">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est dolore illo dolores quia nemo doloribus quaerat, magni numquam repellat reprehenderit.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white shadow-xl rounded-lg p-5 w-full accordion-item">
+            <div class="flex justify-between pb-5">
+                <p class="capitalize text-[#a7cd32] font-semibold">
+                    do you use organic ingredients?
+                </p>
+                <button class="btn">
+                    <i class="fa-regular fa-square-plus text-[#a7cd32] text-[20px] hover:text-black"></i>
+                </button>
+            </div>
+
+            <div class="pt-5 border-t border-black accordion-content hidden">
+                <p class="text-sm text-gray-600">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est dolore illo dolores quia nemo doloribus quaerat, magni numquam repellat reprehenderit.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const items = document.querySelectorAll(".accordion-item");
+
+        items.forEach(item => {
+            const btn = item.querySelector(".btn");
+            const content = item.querySelector(".accordion-content");
+            const icon = item.querySelector("i");
+
+            btn.addEventListener("click", () => {
+
+                items.forEach(other => {
+                    if (other !== item) {
+                        other.querySelector(".accordion-content").classList.add("hidden");
+                        const otherIcon = other.querySelector("i");
+                        otherIcon.classList.remove("fa-square-minus");
+                        otherIcon.classList.add("fa-square-plus");
+                    }
+                });
+
+                content.classList.toggle("hidden");
+
+                if (content.classList.contains("hidden")) {
+                    icon.classList.remove("fa-square-minus");
+                    icon.classList.add("fa-square-plus");
+                } else {
+                    icon.classList.remove("fa-square-plus");
+                    icon.classList.add("fa-square-minus");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
