@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback-UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="all.min.css" />
+</head>
+
+<body class="flex items-center justify-center h-screen bg-[#e0ffff]">
+     
+    <!-- Main -->
+    <div class="bg-[#e9ffff] p-5 rounded-xl shadow-xl flex flex-col items-center gap-5 " id="main">
+
+        <p class="text-[#006400] font-bold text-3xl">Feedback UI</p>
+
+        <div class="flex gap-x-10">
+
+            <div class="feedback-item cursor-pointer flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-[#8fbc8f] transition" id="unhappy">
+                <img src="/images/unhappy.png" alt="unhappy" class="w-8">
+                <p>Unhappy</p>
+            </div>
+
+            <div class="feedback-item cursor-pointer flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-[#8fbc8f] transition" id="neutral">
+                <img src="/images/neutral.png" alt="neutral" class="w-8">
+                <p>Neutral</p>
+            </div>
+
+            <div class="feedback-item cursor-pointer flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-[#8fbc8f] transition" id="satisfied">
+                <img src="/images/satisfied.png" alt="satisfied" class="w-8">
+                <p>Satisfied</p>
+            </div>
+
+        </div>
+
+        <button
+            id="sendBtn"
+            class="bg-[#008b8b] text-white px-6 py-3 rounded-lg font-semibold hover:shadow-2xl transition">
+            Send Review
+        </button>
+
+    </div>
+
+
+    <!-- Thank You -->
+    <div class="bg-[#e9ffff] p-5 rounded-xl shadow-xl flex flex-col items-center gap-5 hidden" id="ty">
+
+        <p class="text-[#006400] font-semibold text-xl">Thank you!</p>
+
+        <span class="text-[#006400] font-semibold text-xl" id="tyspan"></span>
+
+        <p class="text-[#006400] font-semibold text-xl">We'll use your feedback to improve our customer support.</p>
+
+    </div>
+
+
+    <script>
+    const unhappy = document.getElementById("unhappy");
+    const neutral = document.getElementById("neutral");
+    const satisfied = document.getElementById("satisfied");
+    const sendBtn = document.getElementById("sendBtn");
+    const tyspan = document.getElementById("tyspan");
+    const main = document.getElementById("main");
+    const ty = document.getElementById("ty");
+
+    const emojis = [unhappy, neutral, satisfied];
+
+    let selectedFeedback = "";
+
+    emojis.forEach(element => {
+        element.onclick = function() {
+
+            emojis.forEach(el => el.style.backgroundColor = "");
+            
+            element.style.backgroundColor = "#8fbc8f";
+
+            selectedFeedback = element.querySelector("p").innerText;
+        }
+    });
+
+    function result() {
+        if (!selectedFeedback) {
+            alert("Please select a feedback option first!");
+            return;
+        }
+        tyspan.innerText = `Feedback: ${selectedFeedback}`;
+        main.classList.add("hidden");
+        ty.classList.remove("hidden");
+    }
+
+    sendBtn.addEventListener("click", result);
+    </script>
+
+
+
+
+</body>
+</html>
