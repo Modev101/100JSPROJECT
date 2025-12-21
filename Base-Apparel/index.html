@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base Apparel</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen font-['Josefin_Sans'] bg-[#fff5f5]">
+
+  <main class="lg:grid lg:grid-cols-2 lg:min-h-screen lg:gap-x-[250px]">
+
+    <!-- LEFT CONTENT -->
+    <section class="flex flex-col items-center lg:items-start px-6 lg:px-24">
+
+      <!-- Logo -->
+      <div class="py-8">
+        <img src="/images/logo.svg" alt="Base Apparel">
+      </div>
+
+      <!-- Mobile Image -->
+      <img
+        src="/images/hero-mobile.jpg"
+        alt="Hero mobile"
+        class="lg:hidden w-full"
+      >
+
+      <!-- Text -->
+      <div class="text-center lg:text-left mt-12 max-w-md">
+
+        <h1 class="uppercase tracking-[8px] text-4xl lg:text-6xl leading-tight">
+          <span class="block font-light text-[#ce9797]">we're</span>
+          <span class="block font-semibold">coming</span>
+          <span class="block font-semibold">soon</span>
+        </h1>
+
+        <p class="mt-6 text-[#ce9797] leading-6">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+
+        <!-- Email Input -->
+       <div class="relative mt-8 w-full">
+        <input
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+          id="inp"
+          type="email"
+          placeholder="Email Address"
+          class="cursor-pointer w-full border border-[#ce9797] rounded-full py-3 pl-6 pr-24 focus:outline-none transition-colors duration-300"
+        >
+        <button
+          id="btn"
+          class="absolute right-0 top-0 h-full px-8 rounded-full bg-gradient-to-r from-[#f8bfbf] to-[#ee8c8c] shadow-lg hover:opacity-75"
+        >
+          <img src="/images/icon-arrow.svg" alt="">
+        </button>
+      </div>
+      <span class="mt-2 text-sm text-[#f96262ff]" id="error"></span>
+
+
+      </div>
+    </section>
+
+    <section class="hidden lg:block h-screen">
+    <img
+        src="/images/hero-desktop.jpg"
+        alt="Hero desktop"
+        class=" h-full "
+    >
+    </section>
+    
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
