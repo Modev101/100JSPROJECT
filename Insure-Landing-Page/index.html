@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insure-Landing-Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="all.min.css">
+</head>
+
+<body class="font-[Karla] overflow-x-hidden">
+
+<!-- NAV -->
+<nav class="flex justify-between items-center bg-white shadow-2xl px-6 lg:px-14 py-5 relative z-30">
+  <img src="/images/logo.svg" alt="logo">
+
+  <ul class="hidden lg:flex items-center space-x-5">
+    <li class="uppercase tracking-widest font-semibold cursor-pointer text-[#837d87] hover:text-black">how we work</li>
+    <li class="uppercase tracking-widest font-semibold cursor-pointer text-[#837d87] hover:text-black">blog</li>
+    <li class="uppercase tracking-widest font-semibold cursor-pointer text-[#837d87] hover:text-black">account</li>
+    <li>
+      <button class="uppercase tracking-widest font-semibold bg-white border border-black px-3 py-2 hover:bg-black hover:text-white transition ">
+        view plans
+      </button>
+    </li>
+  </ul>
+
+  <button class="lg:hidden" id="btn">
+    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
+
+</nav>
+
+  <div class="bg-[#2d2640] z-50 hidden" id="card">
+          <ul class=" flex flex-col items-center justify-center space-x-5">
+          <li class="uppercase tracking-widest font-semibold cursor-pointer text-[#837d87] hover:text-black">how we work</li>
+          <li class="uppercase tracking-widest font-semibold cursor-pointer text-[#837d87] hover:text-black">blog</li>
+          <li class="uppercase tracking-widest font-semibold cursor-pointer text-[#837d87] hover:text-black">account</li>
+          <li>
+            <button class="uppercase tracking-widest font-semibold bg-white border border-black px-3 py-2 hover:bg-black hover:text-white transition ">
+              view plans
+            </button>
+          </li>
+         </ul>
+  </div>
+
+<!-- HERO -->
+<section class="bg-[#2d2640] relative flex flex-col lg:flex-row-reverse items-center px-6 lg:px-16 py-20">
+
+  <div class="relative w-full lg:w-1/2 flex justify-center lg:justify-end mt-10 lg:mt-0">
+    <img
+      src="/images/image-intro-desktop.jpg"
+      class="w-full max-w-xs sm:max-w-sm lg:w-96 lg:absolute lg:right-32 lg:-bottom-72 z-10"
+      alt=""
+    >
+
+    <img
+      src="/images/bg-pattern-intro-right-desktop.svg"
+      class="hidden lg:block absolute -right-16 -bottom-52 z-0"
+      alt=""
+    >
+  </div>
+
+  <div class="relative w-full lg:w-1/2 text-center lg:text-left z-20">
+    <h1 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">Humanizing</h1>
+    <h1 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">your insurance.</h1>
+
+    <p class="text-white text-base lg:text-lg mb-8">
+      Get your life insurance coverage easier and faster. We blend our expertise and technology to help you find the plan that’s right for you.
+    </p>
+
+    <button class="uppercase tracking-widest font-semibold border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition z-10">
+      View Plans
+    </button>
+
+    <img
+      src="/images/bg-pattern-intro-left-desktop.svg"
+      class="hidden lg:block absolute -left-16 top-10 -z-10"
+      alt=""
+    >
+  </div>
+</section>
+
+<!-- DIFFERENT -->
+<section class="px-6 lg:px-16 py-20 bg-white text-center">
+  <h2 class="text-3xl lg:text-4xl font-bold mb-16">We’re Different</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+    <div class="flex flex-col items-center">
+      <img src="/images/icon-snappy-process.svg" class="mb-4">
+      <h3 class="font-bold text-xl mb-2">Snappy Process</h3>
+      <p class="text-[#837d87]">Our application process can be completed in minutes.</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="/images/icon-affordable-prices.svg" class="mb-4">
+      <h3 class="font-bold text-xl mb-2">Affordable Prices</h3>
+      <p class="text-[#837d87]">Low prices with the best coverage possible.</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="/images/icon-people-first.svg" class="mb-4">
+      <h3 class="font-bold text-xl mb-2">People First</h3>
+      <p class="text-[#837d87]">Coverage when you need it most.</p>
+    </div>
+  </div>
+
+  <div class="relative flex flex-col md:flex-row items-center justify-between bg-[#2d2640] p-10 text-center md:text-left overflow-hidden">
+    <img
+      src="/images/bg-pattern-how-we-work-desktop.svg"
+      class="hidden md:block absolute right-0 top-0 h-full"
+      alt=""
+    >
+
+    <div class="relative z-10 mb-6 md:mb-0">
+      <p class="text-2xl font-semibold text-white">Find out more</p>
+      <p class="text-2xl font-semibold text-white">about how we work</p>
+    </div>
+
+    <button class="relative z-10 uppercase tracking-widest font-semibold border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition">
+      How We Work
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#fafafa] relative overflow-hidden px-6 lg:px-16 py-20">
+
+  <img
+    src="/images/bg-pattern-footer-desktop.svg"
+    class="absolute top-0 left-0 hidden lg:block"
+    alt=""
+  >
+
+  <div class="relative z-10">
+
+    <div class="flex flex-col lg:flex-row justify-between items-center mb-10">
+      <img src="/images/logo.svg" class="mb-6 lg:mb-0">
+
+      <ul class="flex space-x-5 text-xl">
+        <li><i class="fa-brands fa-square-facebook text-[#837d87] hover:text-black"></i></li>
+        <li><i class="fa-brands fa-twitter text-[#837d87] hover:text-black"></i></li>
+        <li><i class="fa-brands fa-pinterest text-[#837d87] hover:text-black"></i></li>
+        <li><i class="fa-brands fa-instagram text-[#837d87] hover:text-black"></i></li>
+      </ul>
+    </div>
+
+    <hr class="border-gray-300 mb-12">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left">
+
+      <div>
+        <h4 class="font-bold mb-4 text-[#837d87] uppercase">Our Company</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="font-semibold uppercase hover:underline">How we work</a></li>
+          <li><a href="#" class="font-semibold uppercase hover:underline">Why insure?</a></li>
+          <li><a href="#" class="font-semibold uppercase hover:underline">View plans</a></li>
+          <li><a href="#" class="font-semibold uppercase hover:underline">Reviews</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4 text-[#837d87] uppercase">Help Me</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="font-semibold uppercase hover:underline">FAQ</a></li>
+          <li><a href="#" class="font-semibold uppercase hover:underline">Terms of Use</a></li>
+          <li><a href="#" class="font-semibold uppercase hover:underline">Privacy Policy</a></li>
+          <li><a href="#" class="font-semibold uppercase hover:underline">Cookies</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4 text-[#837d87] uppercase">Contact</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="font-semibold uppercase hover:underline">Sales</a></li>
+          <li><a href="#" class="font-semibold uppercase hover:underline">Support</a></li>
+          <li><a href="#" class="font-semibold uppercase hover:underline">Live Chat</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4 text-[#837d87] uppercase">Others</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="font-semibold uppercase hover:underline">Careers</a></li>
+          <li><a href="#" class="font-semibold uppercase hover:underline">Press</a></li>
+          <li><a href="#" class="font-semibold uppercase hover:underline">Licenses</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<script src="index.js"></script>
+
+</body>
+</html>
