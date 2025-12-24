@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-Slider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="all.min.css">
+</head>
+
+<body class="flex items-center justify-center h-screen bg-[#f5deb3]">
+
+<div class="relative w-[500px] overflow-hidden">
+
+    <button id="leftbtn"
+        class="absolute left-2 top-1/2 -translate-y-1/2 z-20">
+        <i class="fa-solid fa-angles-left text-white text-2xl opacity-70 hover:opacity-100"></i>
+    </button>
+
+        <div class="image-container flex transition-transform duration-700 ease-in-out">
+            <img src="/images/1-500x300.jpg" class="w-[500px] rounded-xl">
+            <img src="/images/10-500x300.jpg" class="w-[500px] rounded-xl">
+            <img src="/images/20-500x300.jpg" class="w-[500px] rounded-xl">
+            <img src="/images/200-500x300.jpg" class="w-[500px] rounded-xl">
+            <img src="/images/237-500x300.jpg" class="w-[500px] rounded-xl">
+        </div>
+
+        <button id="rightbtn"
+            class="absolute right-2 top-1/2 -translate-y-1/2 z-20">
+            <i class="fa-solid fa-angles-right text-white text-2xl opacity-70 hover:opacity-100"></i>
+        </button>
+
+        </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
