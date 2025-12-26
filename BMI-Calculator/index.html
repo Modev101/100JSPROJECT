@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI-Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-200 via-purple-200 to-pink-200">
+
+  <div class="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 w-[90%] max-w-md">
+    
+    <!-- Title -->
+    <h1 class="text-3xl font-extrabold text-gray-800 mb-8">
+      BMI Calculator
+    </h1>
+
+    <!-- Height -->
+    <div class="mb-5">
+      <label class="block text-sm font-semibold text-gray-600 mb-2">
+        Height (cm)
+      </label>
+      <input
+        type="number"
+        placeholder="Please enter your height in cm"
+        id="height"
+        value="180"
+        class="w-full rounded-xl border border-gray-300 px-4 py-3 text-lg
+               focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    <!-- Weight -->
+    <div class="mb-6">
+      <label class="block text-sm font-semibold text-gray-600 mb-2">
+        Weight (kg)
+      </label>
+      <input
+        placeholder="Please enter your weight in kg"
+        type="number"
+        id="weight"
+        value="80"
+        class="w-full rounded-xl border border-gray-300 px-4 py-3 text-lg
+               focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    <!-- Button -->
+    <button
+      id="convertBtn"
+      class="w-full bg-gradient-to-r from-blue-600 to-purple-600
+             text-white font-semibold py-3 rounded-xl
+             hover:opacity-70 transition duration-300 mb-6"
+    >
+      Compute BMI
+    </button>
+
+    <!-- Result -->
+    <div class="bg-gray-100 rounded-2xl p-4 text-center mb-3">
+      <p class="text-sm text-gray-500">Your BMI</p>
+      <p id="bmiValue" class="text-3xl font-bold text-gray-800">-</p>
+    </div>
+
+    <!-- Condition -->
+    <p class="text-left text-lg font-medium text-gray-700">
+      Weight Condition:
+      <span id="result" class="font-bold text-blue-600"></span>
+    </p>
+
+    <!-- Error -->
+    <p id="error" class="text-center text-red-600 font-semibold mt-2"></p>
+
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
