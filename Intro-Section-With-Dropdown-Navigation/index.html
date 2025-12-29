@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro Section With Dropdown Navigation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white font-sans">
+    <!-- NAVBAR -->
+    <nav class="shadow-2xl px-6 py-5 flex items-center justify-between">
+      <!-- Left section -->
+      <div class="flex items-center gap-12">
+        <!-- Logo -->
+        <img src="/images/logo.svg" alt="logo" class="h-8" />
+
+        <!-- Navigation links (desktop only) -->
+        <ul class="hidden lg:flex items-center gap-8 text-gray-500 font-medium">
+          <li
+            id="featuresDesk"
+            class="flex items-center gap-2 cursor-pointer hover:text-black transition"
+          >
+            Features
+            <img
+              id="featuresDeskArrow"
+              src="/images/icon-arrow-down.svg"
+              alt="arrow-down"
+              class="w-3 h-2"
+            />
+          </li>
+
+          <li
+            id="companyDesk"
+            class="flex items-center gap-2 cursor-pointer hover:text-black transition"
+          >
+            Company
+            <img
+              id="companyDeskArrow"
+              src="/images/icon-arrow-down.svg"
+              alt="arrow-down"
+              class="w-3 h-2"
+            />
+          </li>
+
+          <li class="cursor-pointer hover:text-black transition">Careers</li>
+          <li class="cursor-pointer hover:text-black transition">About</li>
+        </ul>
+      </div>
+
+      <!-- Right section (desktop only) -->
+      <div class="hidden lg:flex items-center gap-6">
+        <button class="text-gray-500 hover:text-black transition">Login</button>
+
+        <button
+          class="border border-gray-400 px-5 py-2 rounded-xl text-gray-500 hover:border-black hover:text-black transition"
+        >
+          Register
+        </button>
+      </div>
+
+      <!-- Hamburger (mobile only) -->
+      <div class="lg:hidden">
+        <img
+          id="menu"
+          src="/images/icon-menu.svg"
+          alt="icon-menu"
+          class="cursor-pointer"
+        />
+      </div>
+    </nav>
+
+    <!-- POP-OUT MENU -->
+    <div
+      id="pop"
+      class="fixed lg:hidden top-0 right-0 h-screen w-2/3 max-w-sm bg-white px-6 py-6 shadow-lg transform translate-x-full transition-transform duration-300"
+    >
+      <!-- Close icon -->
+      <div class="flex justify-end mb-6">
+        <img
+          id="close"
+          src="/images/icon-close-menu.svg"
+          alt="close-menu"
+          class="cursor-pointer w-6"
+        />
+      </div>
+
+      <!-- Menu -->
+      <nav class="flex flex-col gap-6 text-gray-700 font-medium">
+        <!-- Features -->
+        <div class="flex flex-col gap-3">
+          <div
+            class="flex items-center justify-between cursor-pointer"
+            id="features"
+          >
+            <span>Features</span>
+            <img
+              src="/images/icon-arrow-down.svg"
+              class="w-3 transition-transform duration-300"
+              id="featuresArrow"
+            />
+          </div>
+
+          <div
+            class="flex flex-col gap-3 pl-4 text-gray-600 hidden"
+            id="featuresList"
+          >
+            <p class="flex items-center gap-3">
+              <img src="/images/icon-todo.svg" class="w-4" /> Todo List
+            </p>
+            <p class="flex items-center gap-3">
+              <img src="/images/icon-calendar.svg" class="w-4" /> Calendar
+            </p>
+            <p class="flex items-center gap-3">
+              <img src="/images/icon-reminders.svg" class="w-4" /> Reminders
+            </p>
+            <p class="flex items-center gap-3">
+              <img src="/images/icon-planning.svg" class="w-4" /> Planning
+            </p>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div class="flex flex-col gap-3">
+          <div
+            class="flex items-center justify-between cursor-pointer"
+            id="company"
+          >
+            <span>Company</span>
+            <img
+              src="/images/icon-arrow-down.svg"
+              class="w-3 transition-transform duration-300"
+              id="companyArrow"
+            />
+          </div>
+
+          <div
+            class="flex flex-col gap-2 pl-4 text-gray-600 hidden"
+            id="companyList"
+          >
+            <p>History</p>
+            <p>Our Team</p>
+            <p>Blog</p>
+          </div>
+        </div>
+
+        <p class="cursor-pointer">Careers</p>
+        <p class="cursor-pointer">About</p>
+
+        <!-- Auth buttons -->
+        <div class="flex flex-col gap-3 mt-6">
+          <button class="text-gray-700">Login</button>
+          <button
+            class="border border-gray-400 rounded-lg py-2 text-gray-700 hover:bg-gray-100"
+          >
+            Register
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- desktop only -->
+    <div
+      class="absolute left-32 top-24 flex space-x-7"
+      id="deskcontainer"
+    ></div>
+
+    <div
+      class="flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between lg:space-x-16 lg:px-32 lg:py-16 px-6 py-10"
+    >
+      <!-- Text & Clients -->
+      <div
+        class="flex flex-col items-center lg:items-start space-y-6 lg:space-y-10 lg:max-w-lg"
+      >
+        <!-- Heading -->
+        <h1
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-black text-center lg:text-left"
+        >
+          Make remote work
+        </h1>
+
+        <!-- Description -->
+        <div
+          class="text-gray-500 text-center lg:text-left space-y-1 sm:space-y-2"
+        >
+          <p>Get your team in sync, no matter your location.</p>
+          <p>
+            Streamline processes, create team rituals, and watch productivity
+            soar.
+          </p>
+        </div>
+
+        <!-- Learn More Button -->
+        <button
+          class="bg-black text-white rounded-lg py-3 px-6 border border-black hover:bg-white hover:text-black transition"
+        >
+          Learn More
+        </button>
+
+        <!-- Client Logos -->
+        <div
+          class="flex flex-wrap justify-center lg:justify-start gap-1 sm:gap-6 mt-4"
+        >
+          <img
+            src="/images/client-databiz.svg"
+            alt="Databiz"
+            class="w-20 sm:w-24 h-8"
+          />
+          <img
+            src="/images/client-audiophile.svg"
+            alt="Audiophile"
+            class="w-20 sm:w-24 h-8"
+          />
+          <img
+            src="/images/client-meet.svg"
+            alt="Meet"
+            class="w-20 sm:w-24 h-8"
+          />
+          <img
+            src="/images/client-maker.svg"
+            alt="Maker"
+            class="w-20 sm:w-24 h-8"
+          />
+        </div>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="flex justify-center lg:justify-end mb-8 lg:mb-0">
+        <!-- Mobile Image -->
+        <img
+          src="/images/image-hero-mobile.png"
+          alt="hero-mobile"
+          class="lg:hidden w-full h-auto max-w-xs sm:max-w-sm"
+        />
+
+        <!-- Desktop Image -->
+        <img
+          src="/images/image-hero-desktop.png"
+          alt="hero-desktop"
+          class="hidden lg:block w-[28rem] h-auto"
+        />
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
