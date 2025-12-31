@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Launch Countdown Timer</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              redhat: ["Red Hat Text", "sans-serif"],
+            },
+            colors: {
+              darkBlue: "#191a24",
+              cardBottom: "#343650",
+              accent: "#fb6087",
+              textGray: "#8486a9",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body
+    class="font-redhat min-h-screen bg-darkBlue bg-[url('/images/bg-stars.svg')] bg-cover bg-no-repeat text-white flex items-center justify-evenly flex-col"
+  >
+    <main class="flex flex-col items-center gap-12 px-4">
+      <h1
+        class="uppercase tracking-[0.25em] text-xs sm:text-sm md:text-lg text-center"
+      >
+        We're launching soon
+      </h1>
+
+      <!-- COUNTDOWN -->
+      <div class="flex gap-3 sm:gap-4 md:gap-8 flex-wrap justify-center">
+        <!-- DAYS -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="flip-box">
+            <div
+              class="flip-inner w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 bg-cardBottom rounded-lg flex items-center justify-center shadow-xl"
+              data-unit="days"
+            >
+              <span
+                class="text-accent text-3xl sm:text-4xl md:text-6xl font-bold"
+                >00</span
+              >
+            </div>
+          </div>
+          <p
+            class="uppercase text-[10px] sm:text-xs tracking-widest text-textGray"
+          >
+            Days
+          </p>
+        </div>
+
+        <!-- HOURS -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="flip-box">
+            <div
+              class="flip-inner w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 bg-cardBottom rounded-lg flex items-center justify-center shadow-xl"
+              data-unit="hours"
+            >
+              <span
+                class="text-accent text-3xl sm:text-4xl md:text-6xl font-bold"
+                >00</span
+              >
+            </div>
+          </div>
+          <p
+            class="uppercase text-[10px] sm:text-xs tracking-widest text-textGray"
+          >
+            Hours
+          </p>
+        </div>
+
+        <!-- MINUTES -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="flip-box">
+            <div
+              class="flip-inner w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 bg-cardBottom rounded-lg flex items-center justify-center shadow-xl"
+              data-unit="minutes"
+            >
+              <span
+                class="text-accent text-3xl sm:text-4xl md:text-6xl font-bold"
+                >00</span
+              >
+            </div>
+          </div>
+          <p
+            class="uppercase text-[10px] sm:text-xs tracking-widest text-textGray"
+          >
+            Minutes
+          </p>
+        </div>
+
+        <!-- SECONDS -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="flip-box">
+            <div
+              class="flip-inner w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 bg-cardBottom rounded-lg flex items-center justify-center shadow-xl"
+              data-unit="seconds"
+            >
+              <span
+                class="text-accent text-3xl sm:text-4xl md:text-6xl font-bold"
+                >00</span
+              >
+            </div>
+          </div>
+          <p
+            class="uppercase text-[10px] sm:text-xs tracking-widest text-textGray"
+          >
+            Seconds
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative w-full">
+      <!-- SOCIAL ICONS -->
+      <div
+        class="absolute bottom-10 sm:bottom-28 md:-bottom-10 z-10 left-1/2 -translate-x-1/2 flex gap-6 sm:gap-8 text-xl sm:text-2xl text-textGray"
+      >
+        <i
+          class="fa-brands fa-square-facebook hover:text-accent cursor-pointer"
+        ></i>
+        <i class="fa-brands fa-pinterest hover:text-accent cursor-pointer"></i>
+        <i class="fa-brands fa-instagram hover:text-accent cursor-pointer"></i>
+      </div>
+
+      <!-- HILLS -->
+      <img
+        src="/images/pattern-hills.svg"
+        alt="hills"
+        class="w-full object-cover absolute lg:h-fit -bottom-60 h-96 lg:-bottom-[126px]"
+      />
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
