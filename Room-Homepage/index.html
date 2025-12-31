@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room-Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="font-['League_Spartan']">
+    <div
+      id="mobileMenuList"
+      class="bg-white lg:hidden flex z-50 min-w-full py-5 justify-center space-x-1 absolute top-0 -translate-y-full transition-all duration-500"
+    >
+      <div class="absolute top-5 right-5">
+        <img
+          src="/images/icon-close.svg"
+          alt="icon-close"
+          id="mobileCloseList"
+          class="w-7 h-7 cursor-pointer"
+        />
+      </div>
+
+      <div class="pr-7">
+        <ul class="text-black flex space-x-10 font-semibold">
+          <li class="cursor-pointer">home</li>
+          <li class="cursor-pointer">shop</li>
+          <li class="cursor-pointer">about</li>
+          <li class="cursor-pointer">contact</li>
+        </ul>
+      </div>
+    </div>
+    <!-- NAV -->
+    <nav class="absolute top-0 left-0 w-full z-10">
+      <div
+        class="flex items-center gap-12 px-10 py-10 text-white font-semibold"
+      >
+        <img
+          src="/images/logo.svg"
+          alt="logo"
+          class="absolute left-[45%] lg:left-0 lg:static"
+        />
+        <div>
+          <img
+            src="/images/icon-hamburger.svg"
+            alt="icon-hamburger"
+            class="lg:hidden absolute left-5 top-[30px] cursor-pointer"
+            id="mobileMenu"
+          />
+        </div>
+
+        <ul class="hidden md:hidden lg:flex gap-8">
+          <li class="cursor-pointer hover:border-b hover:border-white">home</li>
+          <li class="cursor-pointer hover:border-b hover:border-white">shop</li>
+          <li class="cursor-pointer hover:border-b hover:border-white">
+            about
+          </li>
+          <li class="cursor-pointer hover:border-b hover:border-white">
+            contact
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main>
+      <!-- HERO -->
+      <section class="grid grid-cols-1 lg:grid-cols-2">
+        <!-- IMAGE -->
+        <div class="relative">
+          <img
+            src="/images/desktop-image-hero-1.jpg"
+            class="hidden lg:block w-full h-full object-cover"
+            id="contentimg"
+            alt="desktop-image-hero"
+          />
+          <img
+            src="/images/mobile-image-hero-1.jpg"
+            class="lg:hidden w-full"
+            alt="mobile-image-hero"
+            id="contentimgMobile"
+          />
+
+          <!-- ARROWS -->
+          <div
+            class="absolute bottom-0 right-0 lg:-right-[108px] flex bg-black"
+          >
+            <button class="p-5 hover:bg-[#a1a1a1ff]" id="leftbtn">
+              <img src="/images/icon-angle-left.svg" alt="icon-angle-left" />
+            </button>
+            <button class="p-5 hover:bg-[#a1a1a1ff]" id="rightbtn">
+              <img src="/images/icon-angle-right.svg" alt="icon-angle-right" />
+            </button>
+          </div>
+        </div>
+
+        <!-- TEXT -->
+        <div class="flex flex-col justify-center px-10 py-16 lg:px-20">
+          <h1 class="text-4xl lg:text-4xl font-bold mb-6" id="title">
+            Discover innovative ways to decorate
+          </h1>
+
+          <p class="text-gray-500 mb-8 leading-relaxed" id="content">
+            We provide unmatched quality, comfort, and style for property owners
+            across the country. Our experts combine form and function in
+            bringing your vision to life.
+          </p>
+
+          <button
+            class="flex items-center gap-6 tracking-[0.4em] uppercase hover:text-[#a1a1a1ff]"
+          >
+            Shop now
+            <img src="/images/icon-arrow.svg" alt="icon-arrow" />
+          </button>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="grid grid-cols-1 lg:grid-cols-3">
+        <img
+          src="/images/image-about-dark.jpg"
+          class="w-full h-[223px] object-cover"
+          alt=""
+        />
+
+        <div class="px-8 py-12 flex flex-col justify-center">
+          <h2 class="font-bold tracking-[0.3em] uppercase mb-4">
+            About our furniture
+          </h2>
+          <p class="text-gray-500 leading-relaxed">
+            Our multifunctional collection blends design and function to suit
+            your individual taste. Make each room unique, or pick a cohesive
+            theme that best expresses your interests.
+          </p>
+        </div>
+
+        <img
+          src="/images/image-about-light.jpg"
+          class="w-full h-[223px] object-cover"
+          alt=""
+        />
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
