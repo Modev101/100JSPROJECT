@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark-Landing-Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="all.min.css" />
+  </head>
+  <body class="font-['Rubik'] overflow-x-hidden">
+    <nav class="flex justify-around py-8">
+      <div class="lg:block flex justify-between space-x-5" id="navphone">
+        <img
+          src="/images/logo-bookmark.svg"
+          alt="logo-bookmark"
+          class="lg:absolute top-[38px]"
+        />
+        <img
+          src="/images/icon-hamburger.svg"
+          alt="icon-hamburger"
+          class="w-7 h-7 cursor-pointer lg:hidden"
+          id="menu"
+        />
+      </div>
+      <div class="hidden lg:block">
+        <ul class="flex space-x-10">
+          <li class="px-6 py-2 cursor-pointer uppercase hover:text-[#fa5757ff]">
+            features
+          </li>
+          <li class="px-6 py-2 cursor-pointer uppercase hover:text-[#fa5757ff]">
+            pricing
+          </li>
+          <li class="px-6 py-2 cursor-pointer uppercase hover:text-[#fa5757ff]">
+            contact
+          </li>
+          <li
+            class="px-6 py-2 cursor-pointer uppercase text-white bg-[#fa5757ff] hover:bg-white hover:border-[#fa5757ff] border rounded-lg hover:text-[#fa5757ff]"
+          >
+            login
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 py-16">
+      <div class="flex flex-col-reverse lg:flex-row items-center gap-12">
+        <!-- Text content -->
+        <div class="max-w-md text-center lg:text-left space-y-8">
+          <h1 class="font-semibold text-3xl">
+            A Simple Bookmark<br />
+            Manager
+          </h1>
+
+          <p class="text-sm text-gray-500 mt-4">
+            A clean and simple interface to organize your favourite websites.
+            Open a new browser tab and see your sites load instantly. Try it for
+            free.
+          </p>
+
+          <div class="mt-6 flex justify-center lg:justify-start gap-4">
+            <button
+              class="bg-[#5368df] shadow-lg border text-white rounded-lg px-4 py-2 hover:bg-white hover:border-[#5368df] hover:text-[#5368df] transition"
+            >
+              Get it on Chrome
+            </button>
+
+            <button
+              class="bg-[#EEE] shadow-lg border text-gray-700 rounded-lg px-4 py-2 hover:bg-white hover:border-gray-500 transition"
+            >
+              Get it on Firefox
+            </button>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="w-full lg:w-1/2">
+          <img
+            src="/images/illustration-hero.svg"
+            alt="illustration-hero"
+            class="w-full"
+          />
+          <div
+            class="absolute right-0 top-[250px] bg-[#5368df] w-72 sm:w-80 lg:w-[600px] h-36 lg:h-[330px] rounded-s-full -z-10 max-w-full"
+          ></div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center justify-center mt-36 space-y-10">
+        <div class="flex flex-col items-center justify-center space-y-10">
+          <h1 class="font-semibold text-3xl">Features</h1>
+          <p class="lg:w-1/3 px-7 lg:px-0 text-gray-500">
+            Our aim is to make it quick and easy for you to access your
+            favourite websites. Your bookmarks sync between your devices so you
+            can access them on the go.
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 justify-center lg:space-x-9 border-b border-gray-200"
+        >
+          <button
+            class="pb-4 text-gray-500 hover:text-black border-b-2 border-transparent hover:border-red-500 transition"
+            id="btn1"
+          >
+            Simple Bookmarking
+          </button>
+
+          <button
+            class="pb-4 text-gray-500 hover:text-black border-b-2 border-transparent hover:border-red-500 transition"
+            id="btn2"
+          >
+            Speedy Searching
+          </button>
+
+          <button
+            class="pb-4 text-gray-500 hover:text-black border-b-2 border-transparent hover:border-red-500 transition"
+            id="btn3"
+          >
+            Easy Sharing
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="mt-16 flex flex-col-reverse lg:flex-row-reverse items-center gap-12"
+      >
+        <!-- Text -->
+        <div class="max-w-md text-center lg:text-left space-y-8">
+          <h1 class="font-semibold text-3xl" id="titleContent">
+            Bookmark in one click
+          </h1>
+
+          <p class="text-sm text-gray-500" id="textContent">
+            Organize your bookmarks however you like. Our simple drag-and-drop
+            interface gives you complete control over how you manage your
+            favourite sites.
+          </p>
+
+          <div class="flex justify-center lg:justify-start">
+            <button
+              class="bg-[#5368df] shadow-lg border text-white rounded-lg px-4 py-2 hover:bg-white hover:border-[#5368df] hover:text-[#5368df] transition"
+            >
+              More info
+            </button>
+          </div>
+        </div>
+
+        <!-- Image wrapper MUST be relative -->
+        <div class="relative w-full lg:w-1/2">
+          <img
+            id="imgContent"
+            src="/images/illustration-features-tab-1.svg"
+            alt="illustration-features"
+            class="w-full relative z-10"
+          />
+
+          <!-- Background shape -->
+          <div
+            class="absolute top-20 bg-[#5368df] -left-7 lg:-left-48 w-72 sm:w-80 lg:w-[600px] h-40 lg:h-[330px] rounded-e-full -z-10 max-w-full"
+          ></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex flex-col items-center justify-center space-y-10 mt-32">
+          <h1 class="font-semibold text-3xl text-center">
+            Download the extension
+          </h1>
+          <p class="lg:w-1/2 px-10 text-gray-500">
+            We’ve got more browsers in the pipeline. Please do let us know if
+            you’ve got a favourite you’d like us to prioritize.
+          </p>
+        </div>
+
+        <div
+          class="lg:flex flex-col lg:flex-row lg:space-x-10 items-center justify-center mt-20 relative"
+        >
+          <div
+            class="shadow-2xl rounded-lg flex flex-col items-center justify-center space-y-2 py-10"
+          >
+            <img
+              src="/images/logo-chrome.svg"
+              alt="logo-chrome"
+              class="size-1/3"
+            />
+            <p class="font-semibold">Add to Chrome</p>
+            <p class="text-sm text-gray-500">Minimum version 62</p>
+            <img src="/images/bg-dots.svg" alt="bg-dots" class="py-3" />
+            <button
+              class="bg-[#5368df] shadow-lg border text-white rounded-lg px-4 mx-5 py-2 hover:bg-white hover:border-[#5368df] hover:text-[#5368df] transition"
+            >
+              Add & Install The Extension
+            </button>
+          </div>
+
+          <div
+            class="lg:mt-10 shadow-2xl rounded-lg flex flex-col items-center justify-center space-y-2 py-10"
+          >
+            <img
+              src="/images/logo-firefox.svg"
+              alt="logo-firefox"
+              class="size-1/3"
+            />
+            <p class="font-semibold">Add to Firefox</p>
+            <p class="text-sm text-gray-500">Minimum version 55</p>
+            <img src="/images/bg-dots.svg" alt="bg-dots" class="py-3" />
+            <button
+              class="bg-[#5368df] shadow-lg border text-white rounded-lg px-4 mx-5 py-2 hover:bg-white hover:border-[#5368df] hover:text-[#5368df] transition"
+            >
+              Add & Install The Extension
+            </button>
+          </div>
+          <div
+            class="lg:mt-20 shadow-2xl rounded-lg flex flex-col items-center justify-center space-y-2 py-10"
+          >
+            <img
+              src="/images/logo-opera.svg"
+              alt="logo-opera"
+              class="size-1/3"
+            />
+            <p class="font-semibold">Add to Opera</p>
+            <p class="text-sm text-gray-500">Minimum version 46</p>
+            <img src="/images/bg-dots.svg" alt="bg-dots" class="py-3" />
+            <button
+              class="bg-[#5368df] shadow-lg border text-white rounded-lg px-4 mx-5 py-2 hover:bg-white hover:border-[#5368df] hover:text-[#5368df] transition"
+            >
+              Add & Install The Extension
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center justify-center space-y-10 mt-32">
+        <h1 class="font-semibold text-3xl text-center">
+          Frequently Asked Questions
+        </h1>
+        <p class="lg:w-1/2 px-10 text-gray-500">
+          Here are some of our FAQs. If you have any other questions you’d like
+          answered please feel free to email us.
+        </p>
+      </div>
+
+      <div class="mx-auto max-w-xl w-full flex flex-col divide-y mt-10">
+        <hr />
+        <div>
+          <div
+            id="FAQ1"
+            class="flex items-center justify-between py-4 cursor-pointer hover:text-[#fa5757ff]"
+          >
+            <p class="font-medium">What is Bookmark?</p>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="hidden pb-5" id="FAQ1A">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum
+              quis quam ornare mattis.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div
+            id="FAQ2"
+            class="flex items-center justify-between py-4 cursor-pointer hover:text-[#fa5757ff]"
+          >
+            <p class="font-medium">How can I request a new browser?</p>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="hidden pb-5" id="FAQ2A">
+            <p>
+              Vivamus luctus eros aliquet convallis ultricies. Mauris augue
+              massa, ultricies non ligula. Suspendisse imperdiet. Vivamus luctus
+              eros aliquet convallis ultricies. Mauris augue massa, ultricies
+              non ligula. Suspendisse imperdie tVivamus luctus eros aliquet
+              convallis ultricies. Mauris augue massa, ultricies non ligula.
+              Suspendisse imperdiet.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div
+            id="FAQ3"
+            class="flex items-center justify-between py-4 cursor-pointer hover:text-[#fa5757ff]"
+          >
+            <p class="font-medium">Is there a mobile app?</p>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="hidden pb-5" id="FAQ3A">
+            <p>
+              Sed consectetur quam id neque fermentum accumsan. Praesent luctus
+              vestibulum dolor, ut condimentum urna vulputate eget. Cras in
+              ligula quis est pharetra mattis sit amet pharetra purus. Sed
+              sollicitudin ex et ultricies bibendum.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div
+            id="FAQ4"
+            class="flex items-center justify-between py-4 cursor-pointer hover:text-[#fa5757ff]"
+          >
+            <p class="font-medium">What about other Chromium browsers?</p>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="hidden pb-5" id="FAQ4A">
+            <p>
+              Integer condimentum ipsum id imperdiet finibus. Vivamus in
+              placerat mi, at euismod dui. Aliquam vitae neque eget nisl gravida
+              pellentesque non ut velit.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center items-center mt-10">
+        <button
+          class="bg-[#5368df] shadow-lg border text-white rounded-lg px-4 py-2 hover:bg-white hover:border-[#5368df] hover:text-[#5368df] transition"
+        >
+          More info
+        </button>
+      </div>
+    </main>
+    <div
+      class="flex flex-col items-center justify-center mt-20 bg-[#5368df] space-y-5 py-10 text-white"
+    >
+      <h1 class="uppercase tracking-widest">35,000+ already joined</h1>
+      <p class="font-medium text-2xl">
+        Stay up-to-date with what <br />
+        we’re doing
+      </p>
+      <div
+        class="lg:space-x-4 flex lg:flex-row flex-col justify-center items-center space-y-4 lg:space-y-0"
+      >
+        <div id="inputDiv">
+          <input
+            id="emailInput"
+            type="email"
+            placeholder="Enter your email address"
+            autocomplete="off"
+            spellcheck="false"
+            class="text-black border border-white py-2 pl-4 pr-5 rounded-md cursor-pointer"
+          />
+        </div>
+        <button
+          id="emailbtn"
+          class="w-full bg-[#fa5757ff] font-medium py-2 px-5 rounded-md hover:text-[#fa5757ff] hover:bg-white border hover:border-[#fa5757ff]"
+        >
+          Contact Us
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <div
+        class="bg-[#252b46ff] flex flex-col lg:flex-row items-center justify-center space-y-6 lg:space-y-0 lg:justify-around py-5"
+      >
+        <div class="flex flex-col lg:flex-row space-x-7 space-y-5 lg:space-y-0">
+          <img
+            src="/images/logo-bookmark.svg"
+            alt="logo-bookmark"
+            class="bg-white rounded-lg px-2"
+          />
+          <p
+            class="text-gray-500 uppercase hover:text-[#fa5757] cursor-pointer"
+          >
+            features
+          </p>
+          <p
+            class="text-gray-500 uppercase hover:text-[#fa5757] cursor-pointer"
+          >
+            pricing
+          </p>
+          <p
+            class="text-gray-500 uppercase hover:text-[#fa5757] cursor-pointer"
+          >
+            contact
+          </p>
+        </div>
+        <div class="space-x-5 text-white pr-12 lg:pr-0">
+          <i
+            class="fa-brands fa-square-facebook cursor-pointer hover:text-[#fa5757] text-2xl"
+          ></i>
+          <i
+            class="fa-brands fa-twitter cursor-pointer hover:text-[#fa5757] text-2xl"
+          ></i>
+        </div>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
