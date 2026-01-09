@@ -114,6 +114,12 @@ const emptycart = document.getElementById("emptycart");
 
 addtocart.addEventListener("click", () => {
   if (count === 0) return;
+  if (window.innerWidth < 768) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
 
   emptycart.style.display = "none";
   cartbasket.innerHTML = "";
@@ -200,3 +206,4 @@ addtocart.addEventListener("click", () => {
     });
   });
 });
+
