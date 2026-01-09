@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Commerce-Product-Page</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/all.min.css" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="font-['Kumbh_Sans'] overflow-x-hidden">
+    <!-- NAVIGATION -->
+    <nav>
+      <div
+        class="max-w-7xl mx-auto border-b flex items-center justify-between px-6 py-5"
+      >
+        <!-- Left section -->
+        <div class="flex items-center justify-center lg:space-x-12 space-x-4">
+          <!-- Logo -->
+          <div class="flex items-center justify-center space-x-5">
+            <img
+              src="/images/icon-menu.svg"
+              alt="menu"
+              id="menuphone"
+              class="lg:hidden md:hidden h-4 cursor-pointer"
+            />
+            <img
+              src="/images/logo.svg"
+              alt="logo"
+              class="w-32 lg:w-full lg:h-6"
+            />
+          </div>
+
+          <!-- Navigation links -->
+          <ul
+            class="hidden md:flex items-center space-x-8 text-sm text-gray-600"
+          >
+            <li
+              class="relative cursor-pointer font-semibold hover:text-black after:absolute after:left-0 after:-bottom-[32px] after:h-[3px] after:w-full after:bg-[#ff7d1a] after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100"
+            >
+              Collection
+            </li>
+
+            <li
+              class="relative cursor-pointer font-semibold hover:text-black after:absolute after:left-0 after:-bottom-[32px] after:h-[3px] after:w-full after:bg-[#ff7d1a] after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100"
+            >
+              Men
+            </li>
+
+            <li
+              class="relative cursor-pointer font-semibold hover:text-black after:absolute after:left-0 after:-bottom-[32px] after:h-[3px] after:w-full after:bg-[#ff7d1a] after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100"
+            >
+              Women
+            </li>
+
+            <li
+              class="relative cursor-pointer font-semibold hover:text-black after:absolute after:left-0 after:-bottom-[32px] after:h-[3px] after:w-full after:bg-[#ff7d1a] after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100"
+            >
+              About
+            </li>
+
+            <li
+              class="relative cursor-pointer font-semibold hover:text-black after:absolute after:left-0 after:-bottom-[32px] after:h-[3px] after:w-full after:bg-[#ff7d1a] after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100"
+            >
+              Contact
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right section -->
+        <div id="popcart" class="flex items-center lg:space-x-6 space-x-3">
+          <!-- Cart -->
+          <img
+            id="cart"
+            src="/images/icon-cart.svg"
+            alt="cart"
+            class="h-5 cursor-pointer"
+          />
+
+          <!-- Avatar -->
+          <img
+            src="/images/image-avatar.png"
+            alt="avatar"
+            class="h-10 w-10 rounded-full cursor-pointer border-2 border-transparent hover:border-orange-500"
+          />
+        </div>
+      </div>
+    </nav>
+    <!-- PHONE POP-OUT -->
+    <div
+      id="overlay"
+      class="fixed inset-0 z-30 bg-black bg-opacity-50 opacity-0 pointer-events-none transition-opacity duration-300"
+    >
+      <div
+        id="popphone"
+        class="bg-white h-screen w-1/2 shadow-xl absolute left-0 top-0 transform -translate-x-full transition-transform duration-500 space-x-6 space-y-6 ease-in-out"
+      >
+        <!-- Sidebar content -->
+
+        <div>
+          <img
+            src="/images/icon-close.svg"
+            alt="close"
+            id="closebtnphone"
+            class="ml-6 mt-6"
+          />
+        </div>
+        <div>
+          <ul class="text-black space-y-4">
+            <li class="relative cursor-pointer font-semibold">Collection</li>
+
+            <li class="relative cursor-pointer font-semibold">Men</li>
+
+            <li class="relative cursor-pointer font-semibold">Women</li>
+
+            <li class="relative cursor-pointer font-semibold">About</li>
+
+            <li class="relative cursor-pointer font-semibold">Contact</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CART -->
+    <div
+      id="cartbasket"
+      class="z-20 bg-white shadow-xl lg:w-1/4 w-[90%] rounded-xl right-4 top-24 absolute lg:right-10 hidden"
+    >
+      <h1 class="border-b pb-5 pl-4 font-bold pt-5">Cart</h1>
+
+      <p
+        id="emptycart"
+        class="text-[#68707dff] text-center py-24 font-semibold"
+      >
+        Your cart is empty.
+      </p>
+    </div>
+
+    <main
+      class="flex flex-col lg:flex-row items-center justify-center lg:gap-40 lg:p-10"
+    >
+      <!-- Product Images -->
+      <div class="w-full lg:ml-40 lg:w-1/3">
+        <!-- Main Image -->
+        <div class="relative mb-4">
+          <img
+            src="/images/image-product-1.jpg"
+            alt="product-1"
+            id="mainpicture"
+            class="w-full lg:rounded-lg"
+          />
+
+          <!-- Navigation Arrows -->
+          <div class="absolute inset-0 flex justify-between items-center px-4">
+            <!-- Previous -->
+            <div
+              class="bg-white w-10 h-10 rounded-full flex justify-center items-center cursor-pointer shadow-lg lg:hidden"
+            >
+              <img
+                src="/images/icon-previous.svg"
+                alt="previous"
+                id="previousbtn"
+              />
+            </div>
+            <!-- Next -->
+            <div
+              class="bg-white w-10 h-10 rounded-full flex justify-center items-center cursor-pointer shadow-lg lg:hidden"
+            >
+              <img src="/images/icon-next.svg" alt="next" id="nextbtn" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Thumbnails -->
+
+        <div
+          id="thumbnails"
+          class="lg:flex justify-center gap-4 px-6 items-center hidden"
+        >
+          <img
+            src="/images/image-product-1-thumbnail.jpg"
+            alt="product-1-thumbnail"
+            class="w-1/4 rounded-lg cursor-pointer hover:opacity-50 border-2"
+          />
+          <img
+            src="/images/image-product-2-thumbnail.jpg"
+            alt="product-2-thumbnail"
+            class="w-1/4 rounded-lg cursor-pointer hover:opacity-50 border-2"
+          />
+          <img
+            src="/images/image-product-3-thumbnail.jpg"
+            alt="product-3-thumbnail"
+            class="w-1/4 rounded-lg cursor-pointer hover:opacity-50 border-2"
+          />
+          <img
+            src="/images/image-product-4-thumbnail.jpg"
+            alt="product-4-thumbnail"
+            class="w-1/4 rounded-lg cursor-pointer hover:opacity-50 border-2"
+          />
+        </div>
+      </div>
+
+      <!-- Product Details -->
+      <div
+        class="w-full lg:w-2/3 flex px-10 flex-col justify-between mt-6 lg:mt-0"
+      >
+        <div class="space-y-4">
+          <h3 class="text-sm font-semibold text-[#68707d] tracking-widest">
+            SNEAKER COMPANY
+          </h3>
+          <h1 class="text-4xl font-bold text-gray-900 leading-snug">
+            Fall Limited Edition <br />
+            Sneakers
+          </h1>
+          <p class="text-gray-500 text-sm font-semibold leading-relaxed">
+            These low-profile sneakers are your perfect casual wear <br />
+            companion. Featuring a durable rubber outer sole, they'll <br />
+            withstand everything the weather can offer.
+          </p>
+
+          <div
+            class="flex justify-between items-center lg:flex-col lg:justify-start space-y-2 lg:items-start"
+          >
+            <div class="flex items-center gap-4">
+              <p class="text-2xl font-bold text-gray-900">$125.00</p>
+              <span class="bg-black text-white font-semibold px-2 py-1 rounded"
+                >50%</span
+              >
+            </div>
+            <div>
+              <p class="text-[#68707d] font-semibold line-through">$250.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quantity + Add to Cart -->
+        <div class="mt-6 flex flex-col sm:flex-row gap-4">
+          <!-- Quantity Selector -->
+          <div
+            class="flex items-center justify-between bg-gray-100 px-4 rounded-md w-full sm:w-32"
+          >
+            <button id="minus" class="p-2 hover:opacity-70">
+              <img src="/images/icon-minus.svg" alt="minus" />
+            </button>
+            <span class="font-semibold" id="itemcount">0</span>
+            <button id="plus" class="p-2 hover:opacity-70">
+              <img src="/images/icon-plus.svg" alt="plus" />
+            </button>
+          </div>
+          <!-- Add to Cart Button -->
+          <button
+            id="addtocart"
+            class="flex items-center justify-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-md w-full sm:w-auto hover:opacity-70"
+          >
+            <img src="/images/icon-cart.svg" alt="cart" />
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
