@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advice Generator</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght,YOPQ@100..900,300&family=League+Spartan:wght@100..900&family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/all.min.css" />
+  </head>
+
+  <body
+    class="bg-slate-900 min-h-screen flex items-center justify-center font-['Manrope']"
+  >
+    <div
+      class="relative bg-slate-800 text-center max-w-md w-full mx-4 px-8 py-10 rounded-2xl"
+    >
+      <!-- Advice ID -->
+      <p
+        id="adviceNumber"
+        class="text-emerald-400 tracking-[0.25em] font-semibold mb-6"
+      >
+        ADVICE #117
+      </p>
+
+      <!-- Advice text -->
+      <p id="advice" class="text-slate-200 text-2xl font-semibold mb-8">
+        “Some people would be better off if they took their own advice.”
+      </p>
+
+      <!-- Divider -->
+      <img
+        src="/images/pattern-divider-desktop.svg"
+        alt="pattern-divider"
+        class="mx-auto mb-10"
+      />
+
+      <!-- Dice button -->
+      <button
+        id="generate"
+        class="hover:sha absolute left-1/2 -bottom-7 -translate-x-1/2 bg-emerald-400 p-5 rounded-full hover:bg-emerald-300 hover:shadow-2xl transition"
+      >
+        <i class="fa-solid fa-dice-five text-slate-900 text-xl"></i>
+      </button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
