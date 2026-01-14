@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+button {
+  box-shadow: 0px 3px 0px 0px #b4a597;
+}
+button:hover {
+  opacity: 0.7;
+}
