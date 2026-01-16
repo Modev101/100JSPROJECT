@@ -12,7 +12,7 @@ menubar.addEventListener("click", () => {
   menu.classList.add(
     "bg-[#3b3054]",
     "absolute",
-    "left-6",
+    "left-[9%]",
     "w-10/12",
     "z-10",
     "p-5",
@@ -149,3 +149,4 @@ shortenbtn.addEventListener("click", () => {
     shortenbox.value = "";
   }
 });
+
