@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Rubik";
+}
+.fa-plus.active {
+  color: #38e33e; /* purple for upvote */
+}
+
+.fa-minus.active {
+  color: #ed6468; /* red for downvote */
+}
