@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Extensions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-[#09153e] font-[Noto_Sans]">
+    <nav
+      class="max-w-5xl flex items-center justify-between text-white mx-auto mt-10 bg-[#212636] rounded-lg shadow-lg p-3"
+    >
+      <div class="pl-2 flex items-center space-x-3">
+        <img src="/assets/images/logo.png" alt="logo" />
+        <p class="text-3xl font-semibold">Extensions</p>
+      </div>
+      <button
+        id="themebtn"
+        class="mr-2 cursor-pointer bg-[#2f364b] p-2 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
+      >
+        <i class="fa-regular fa-sun"></i>
+      </button>
+    </nav>
+    <main class="max-w-5xl mx-auto mt-10 text-white">
+      <div class="flex lg:flex-row flex-col items-center space-y-5 justify-between">
+        <div>
+          <h1 class="text-2xl font-semibold pl-2">Extensions List</h1>
+        </div>
+        <div class="space-x-4">
+          <button
+            id="allbtn"
+            class="bg-[#de473f] rounded-full font-medium px-4 py-1 focus:ring-2 focus:ring-red-500 focus:outline-none"
+          >
+            All
+          </button>
+          <button
+            id="activebtn"
+            class="bg-[#2f364b] rounded-full px-3 py-1 font-medium shadow-2xl border border-[#545969] focus:ring-2 focus:ring-red-500 focus:outline-none"
+          >
+            Active
+          </button>
+          <button
+            id="inactivebtn"
+            class="bg-[#2f364b] rounded-full px-3 py-1 font-medium shadow-2xl border border-[#545969] focus:ring-2 focus:ring-red-500 focus:outline-none"
+          >
+            Inactive
+          </button>
+        </div>
+      </div>
+      <!-- EXTENSIONS CARD -->
+      <div
+        id="cardscontainer"
+        class="mt-10 grid lg:grid-cols-3 lg:grid-rows-4 gap-3"
+      ></div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
