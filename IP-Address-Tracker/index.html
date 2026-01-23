@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IP Address Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
+  <body class="font-['Rubik']">
+    <div class="relative z-50">
+      <div
+        class="bg-[url('/images/pattern-bg-mobile.png')] md:bg-[url('/images/pattern-bg-desktop.png')] bg-cover bg-no-repeat h-60 flex items-center justify-center flex-col"
+      >
+        <h1 class="text-white font-semibold text-2xl mb-5">
+          IP Address Tracker
+        </h1>
+        <form class="relative">
+          <input
+            autocomplete="off"
+            id="ipInput"
+            type="text"
+            placeholder="Search for any IP address or domain"
+            class="pl-4 py-3 rounded-lg lg:w-96 w-72 focus:outline-none cursor-pointer"
+          />
+          <button
+            id="searchBtn"
+            type="submit"
+            class="absolute right-0 top-0 h-full px-4 bg-black text-white rounded-r-lg hover:opacity-70"
+          >
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </form>
+      </div>
+      <div
+        class="flex lg:flex-row flex-col justify-around py-4 bg-white rounded-lg shadow-xl w-10/12 absolute lg:right-[105px] lg:-bottom-16 top-48 right-7 z-20"
+      >
+        <div class="pl-10">
+          <p class="opacity-70 tracking-widest font-semibold">IP ADDRESS</p>
+          <h1 id="ipText" class="font-bold text-lg"></h1>
+        </div>
+        <div class="border-l-2 pl-10">
+          <p class="opacity-70 tracking-widest font-semibold">LOCATION</p>
+          <h1 id="locationText" class="font-bold text-lg">
+            <br class="hidden lg:block" />
+          </h1>
+        </div>
+        <div class="border-l-2 pl-10">
+          <p class="opacity-70 tracking-widest font-semibold">TIMEZONE</p>
+          <h1 id="timezoneText" class="font-bold text-lg"></h1>
+        </div>
+        <div class="border-l-2 pl-10">
+          <p class="opacity-70 tracking-widest font-semibold">ISP</p>
+          <h1 id="ispText" class="font-bold text-lg">
+            <br class="hidden lg:block" />
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div id="map" class="h-[500px] w-full z-10"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
