@@ -1,0 +1,29 @@
+ul::-webkit-scrollbar {
+  width: 0.5px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: #5555554f;
+  border-radius: 999px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
+}
+
+.checked {
+  background: linear-gradient(to right, #57ddff, #c058f3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.draggable {
+  padding: 1rem;
+  background-color: #16172284;
+  border: 1px solid black;
+  cursor: move;
+}
+li {
+  touch-action: none;
+}

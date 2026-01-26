@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do App</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="font-['Josefin_Sans'] bg-[#161722] min-h-screen">
+    <header
+      class="bg-[url('/images/bg-desktop-dark.jpg')] bg-cover bg-center h-64 px-5"
+    >
+      <div
+        class="max-w-xl mx-auto flex justify-between items-center h-full text-white"
+      >
+        <h1 class="text-3xl font-bold tracking-[0.4em]">TODO</h1>
+
+        <button aria-label="Toggle theme" class="text-2xl rounded">
+          <i id="themeBtn" class="fa-regular fa-sun"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="-mt-24 px-5">
+      <section class="max-w-xl mx-auto text-white shadow-xl overflow-hidden">
+        <label
+          for="todoinput"
+          class="flex items-center gap-4 px-5 py-4 bg-[#25273c] mb-3"
+        >
+          <button
+            class="text-xl text-gray-400 transition hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#57ddff] hover:to-[#c058f3]"
+          >
+            <i id="submitbtn" class="fa-regular fa-circle"></i>
+          </button>
+          <input
+            id="todoinput"
+            type="text"
+            placeholder="Create a new todo..."
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+            class="bg-transparent placeholder-gray-400 focus:outline-none w-full px-2 py-1"
+          />
+        </label>
+        <ul
+          id="todolist"
+          class="divide-y divide-[#3a3c55] overflow-y-scroll h-72 bg-[#25273c]"
+        ></ul>
+      </section>
+      <div
+        id="filterDiv"
+        class="flex flex-col lg:flex-row justify-between items-center px-5 py-4 text-sm text-gray-400 bg-[#25273c] lg:space-y-0 space-y-4 max-w-xl mx-auto"
+      >
+        <span>0 items left</span>
+
+        <div id="mainbtns" class="flex gap-4">
+          <button
+            id="allbtn"
+            class="hover:text-white text-[#3a7bfd] font-semibold"
+          >
+            All
+          </button>
+          <button id="activebtn" class="hover:text-white font-semibold">
+            Active
+          </button>
+          <button id="completedbtn" class="hover:text-white font-semibold">
+            Completed
+          </button>
+        </div>
+
+        <button id="clearcompletedbtn" class="hover:text-white font-semibold">
+          Clear Completed
+        </button>
+      </div>
+    </main>
+    <p class="text-[#9394a5] text-center my-4 lg:pb-1">
+      Drag and drop to reorder list
+    </p>
+    <script src="index.js"></script>
+  </body>
+</html>
