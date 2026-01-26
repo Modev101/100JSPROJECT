@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Filtering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="relative bg-[#5ba4a4] h-40">
+      <div
+        class="absolute inset-0 bg-[url('/images/bg-header-desktop.svg')] bg-cover bg-no-repeat"
+      >
+        <div
+          class="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2 flex lg:flex-row flex-col items-center justify-between lg:w-full w-11/12 lg:max-w-5xl bg-white px-5 py-4 shadow-lg rounded-xl space-y-4 lg:space-y-0"
+        >
+          <div id="filters" class="flex flex-wrap gap-2 lg:space-x-4"></div>
+
+          <div>
+            <button
+              id="clearFilters"
+              class="font-semibold text-[#7b8e8e] hover:text-[#5ba4a4] hover:underline"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="mt-20 mb-10 space-y-10 lg:space-y-5 px-5"></main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
