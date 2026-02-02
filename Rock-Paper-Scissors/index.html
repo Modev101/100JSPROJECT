@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body
+    class="font-['Barlow_Semi_Condensed'] bg-gradient-to-b from-[#1f3756] to-[#141639] bg-no-repeat min-h-screen"
+  >
+    <div class="px-10 lg:px-0">
+      <div class="mt-10 flex flex-col items-center mx-auto max-w-xl">
+        <div
+          class="flex justify-between w-full outline outline-offset-[16px] rounded-lg outline-[#565469]"
+        >
+          <div>
+            <img src="images/logo.svg" alt="logo.svg" />
+          </div>
+          <div
+            class="flex flex-col items-center justify-center bg-white rounded-lg text-center lg:px-7 p-2"
+          >
+            <p class="uppercase tracking-widest font-semibold text-[#2a46c0]">
+              score
+            </p>
+            <p id="score" class="font-bold text-[#3b4363] text-6xl">0</p>
+          </div>
+        </div>
+        <!-- MAIN GAME -->
+        <div id="mainsection" class="lg:mt-32 mt-20 relative">
+          <img src="images/bg-triangle.svg" alt="bg-triangle" />
+          <div
+            data-select="paper"
+            class="absolute lg:-top-10 -top-6 hover:opacity-70 cursor-pointer"
+          >
+            <i
+              class="fa-solid fa-hand bg-white/70 flex items-center justify-center lg:size-28 rounded-full lg:text-5xl size-14 text-3xl text-[#141639]"
+            ></i>
+          </div>
+          <div
+            data-select="scissors"
+            class="absolute lg:-top-10 -top-6 right-0 hover:opacity-70 cursor-pointer"
+          >
+            <i
+              class="fa-solid fa-hand-scissors bg-white/70 flex items-center justify-center lg:size-28 rounded-full lg:text-5xl size-14 text-3xl text-[#141639]"
+            ></i>
+          </div>
+          <div
+            data-select="rock"
+            class="absolute lg:right-[100px] right-[95px] md:right-[125px] -bottom-4 hover:opacity-70 cursor-pointer"
+          >
+            <i
+              class="fa-solid fa-hand-back-fist bg-white/70 flex items-center justify-center lg:size-28 rounded-full lg:text-5xl size-14 text-3xl text-[#141639]"
+            ></i>
+          </div>
+        </div>
+      </div>
+      <!-- SELECTION  -->
+      <div
+        id="selectionsection"
+        class="hidden flex lg:flex-row flex-col lg:justify-between justify-center lg:space-y-0 space-y-10 items-center max-w-2xl mx-auto mt-16"
+      >
+        <div class="space-y-10">
+          <h1
+            class="text-center text-white uppercase font-semibold tracking-widest lg:text-xl"
+          >
+            you picked
+          </h1>
+          <div
+            id="playerchoice"
+            class="rounded-full lg:flex lg:items-center lg:justify-center"
+          ></div>
+        </div>
+        <div class="flex flex-col items-center justify-center space-y-5 mt-10">
+          <h1
+            id="result"
+            class="text-white uppercase font-bold tracking-widest text-2xl"
+          ></h1>
+          <button
+            id="playagain"
+            class="uppercase tracking-widest bg-white rounded-lg px-7 py-2 text-xl font-semibold shadow-lg hover:opacity-80"
+          >
+            play again
+          </button>
+        </div>
+        <div class="space-y-10">
+          <h1
+            class="text-center text-white uppercase font-semibold tracking-widest text-xl"
+          >
+            the house picked
+          </h1>
+
+          <div
+            id="computerchoice"
+            class="rounded-full lg:flex lg:items-center lg:justify-center"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="flex justify-center lg:justify-end lg:mr-7 lg:mt-10 mt-20 mb-10"
+    >
+      <button
+        id="rulesbtn"
+        class="hover:opacity-70 outline-offset-4 outline outline-[#565469] px-4 rounded-md uppercase text-white tracking-widest font-semibold"
+      >
+        rules
+      </button>
+    </div>
+    <div
+      class="overlay hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+    >
+      <div
+        class="max-w-xs mx-auto bg-white lg:rounded-lg p-7 h-screen lg:h-fit"
+      >
+        <div class="flex justify-between items-center mb-5">
+          <h1 class="uppercase tracking-wide font-bold text-xl">rules</h1>
+          <i
+            class="fa-solid fa-close opacity-70 text-lg hover:opacity-100 cursor-pointer"
+          ></i>
+        </div>
+        <img src="/images/image-rules.svg" alt="image-rules" />
+      </div>
+    </div>
+  </body>
+</html>
