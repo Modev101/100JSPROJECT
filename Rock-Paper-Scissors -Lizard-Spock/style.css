@@ -1,0 +1,95 @@
+.fa-hand {
+  box-shadow:
+    inset 0px 4px 0px 0px #808080aa,
+    0px 0px 0px 15px #4865f4,
+    0px 4px 0px 15px #2a46c0;
+}
+.fa-hand-scissors {
+  box-shadow:
+    inset 0px 4px 0px 0px #808080aa,
+    0px 0px 0px 15px #ec9e0e,
+    0px 4px 0px 15px #c56b1b;
+}
+.fa-hand-back-fist {
+  box-shadow:
+    inset 0px 4px 0px 0px #808080aa,
+    0px 0px 0px 15px #dc2e4e,
+    0px 4px 0px 15px #9c1633;
+}
+.fa-hand-lizard {
+  box-shadow:
+    inset 0px 4px 0px 0px #808080aa,
+    0px 0px 0px 15px #834fe3,
+    0px 4px 0px 15px #5f37a9;
+}
+.fa-hand-spock {
+  box-shadow:
+    inset 0px 4px 0px 0px #808080aa,
+    0px 0px 0px 15px #40b9ce,
+    0px 4px 0px 15px #2d8ca9;
+}
+
+@media (max-width: 767px) {
+  .fa-hand {
+    box-shadow:
+      inset 0px 4px 0px 0px #808080aa,
+      0px 0px 0px 8px #4865f4,
+      0px 4px 0px 8px #2a46c0;
+  }
+  .fa-hand-scissors {
+    box-shadow:
+      inset 0px 4px 0px 0px #808080aa,
+      0px 0px 0px 8px #ec9e0e,
+      0px 4px 0px 8px #c56b1b;
+  }
+  .fa-hand-back-fist {
+    box-shadow:
+      inset 0px 4px 0px 0px #808080aa,
+      0px 0px 0px 8px #dc2e4e,
+      0px 4px 0px 8px #9c1633;
+  }
+  .fa-hand-lizard {
+    box-shadow:
+      inset 0px 4px 0px 0px #808080aa,
+      0px 0px 0px 8px #834fe3,
+      0px 4px 0px 8px #5f37a9;
+  }
+  .fa-hand-spock {
+    box-shadow:
+      inset 0px 4px 0px 0px #808080aa,
+      0px 0px 0px 8px #40b9ce,
+      0px 4px 0px 8px #2d8ca9;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fa-hand {
+    box-shadow:
+      inset 0px 4px 0px 0px #808080aa,
+      0px 0px 0px 8px #4865f4,
+      0px 4px 0px 8px #2a46c0;
+  }
+  .fa-hand-scissors {
+    box-shadow:
+      inset 0px 4px 0px 0px #808080aa,
+      0px 0px 0px 8px #ec9e0e,
+      0px 4px 0px 8px #c56b1b;
+  }
+  .fa-hand-back-fist {
+    box-shadow:
+      inset 0px 4px 0px 0px #808080aa,
+      0px 0px 0px 8px #dc2e4e,
+      0px 4px 0px 8px #9c1633;
+  }
+  .fa-hand-lizard {
+    box-shadow:
+      inset 0px 4px 0px 0px #808080aa,
+      0px 0px 0px 8px #834fe3,
+      0px 4px 0px 8px #5f37a9;
+  }
+  .fa-hand-spock {
+    box-shadow:
+      inset 0px 4px 0px 0px #808080aa,
+      0px 0px 0px 8px #40b9ce,
+      0px 4px 0px 8px #2d8ca9;
+  }
+}
