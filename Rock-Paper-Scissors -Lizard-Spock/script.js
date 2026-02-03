@@ -55,6 +55,8 @@ selections.forEach((select) => {
     const score = document.getElementById("score");
     const result = document.getElementById("result");
     if (playerSelection.name === computerSelection.name) {
+      result.classList.remove("text-green-500");
+      result.classList.remove("text-red-500");
       result.innerHTML = "DRAW";
       playAgainBtn.classList.remove("hover:text-red-500");
       playAgainBtn.classList.remove("hover:text-green-500");
@@ -98,3 +100,4 @@ function isWinner(selection, opponent) {
 function getRandomSelection() {
   return SELECTIONS[Math.floor(Math.random() * SELECTIONS.length)];
 }
+
