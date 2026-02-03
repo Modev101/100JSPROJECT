@@ -62,15 +62,21 @@ selections.forEach((select) => {
     const score = document.getElementById("score");
     const result = document.getElementById("result");
     if (playerSelection.name === computerSelection.name) {
+      result.classList.remove("text-green-500");
+      result.classList.remove("text-red-500");  
       result.innerHTML = "DRAW";
       playAgainBtn.classList.remove("hover:text-red-500");
       playAgainBtn.classList.remove("hover:text-green-500");
     } else if (isWinner(playerSelection, computerSelection)) {
+      result.classList.remove("text-red-500");
+      result.classList.add("text-green-500");
       result.innerHTML = "YOU WIN";
       score.innerHTML++;
       playAgainBtn.classList.remove("hover:text-red-500");
       playAgainBtn.classList.add("hover:text-green-500");
     } else {
+      result.classList.remove("text-green-500");
+      result.classList.add("text-red-500");
       result.innerHTML = "YOU LOSE";
       score.innerHTML--;
       playAgainBtn.classList.remove("hover:text-green-500");
@@ -101,3 +107,4 @@ function isWinner(selection, opponent) {
 function getRandomSelection() {
   return SELECTIONS[Math.floor(Math.random() * SELECTIONS.length)];
 }
+
