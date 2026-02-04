@@ -1,0 +1,62 @@
+:root {
+  --Light-Mode-Background: #fafafa;
+  --Dark-Mode-Background: #111517;
+  --Dark-Mode-Text-And-Light-Mode-Elements: #ffffff;
+  --Light-Mode-Input: #858585;
+}
+
+.dark {
+  --Light-Mode-Background: #202c37;
+  --Dark-Mode-Background: #ffffff;
+  --Dark-Mode-Text-And-Light-Mode-Elements: #2b3945;
+  --Light-Mode-Input: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: var(--Light-Mode-Background);
+}
+
+h1 {
+  color: var(--Dark-Mode-Background);
+}
+
+nav,
+main div div,
+main button,
+main ul,
+input,
+div button {
+  background-color: var(--Dark-Mode-Text-And-Light-Mode-Elements);
+}
+
+span {
+  color: #858585;
+}
+input {
+  color: var(--Light-Mode-Input);
+}
+main ul li:hover {
+  background-color: #27252544;
+  transform: scale(1.2);
+  transition: 1.5s;
+  border-radius: 5%;
+  cursor: pointer;
+}
+p,
+li,
+i,
+div button {
+  font-weight: 600;
+  color: var(--Dark-Mode-Background);
+}
+.card:hover {
+  transform: scale(1.2);
+  transition: 1.5s;
+  border-radius: 5%;
+  cursor: pointer;
+}
